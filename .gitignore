@@ -1,0 +1,26 @@
+# Raw dataset (do not commit; license permits but kept out of VCS by policy)
+data/raw/
+
+# Local index / embedding artifacts (regenerable)
+data/processed/*.npy
+data/processed/*.index
+data/processed/*.faiss
+data/processed/bm25.pkl
+data/processed/runs/
+
+# Env / secrets
+.env
+.env.*
+
+# Model / HF caches
+.cache/
+**/.cache/
+hf_cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
