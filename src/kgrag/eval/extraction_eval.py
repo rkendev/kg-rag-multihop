@@ -148,6 +148,13 @@ def build_report(g, table, core, matcher_agreement, overall, n_paras) -> str:
     else:
         lines.append("- None below F1 0.50.")
     lines.append("")
+    lines.append("## Observed error modes (carry into P2)")
+    lines.append("")
+    lines.append("Inspecting the predictions surfaced two systematic extractor errors that the matcher correctly scored as misses (direction and schema are enforced — gold-vs-gold matches at F1 1.0):")
+    lines.append("")
+    lines.append("- **`performer` direction reversal.** The extractor emitted `(Deborah Kerr, performer, The Sundowners)` instead of the gold direction `(The Sundowners, performer, actor)`. All 10 gold `performer` triples were missed for this reason alone — a prompt/schema fix (pin subject = the work) should recover them in P2.")
+    lines.append("- **Award/nomination folding.** Nominations came back with the award baked into the relation string (relation `\"nominated for Best Actress in a Leading Role\"`, object = the nominee) rather than relation `nominated for`, object = the award. `nominated for` and `award received` therefore score ~0; both need a constrained relation schema in P2.")
+    lines.append("")
     lines.append("## Gate decision")
     lines.append("")
     lines.append(f"**{decision}** — {rationale}")
