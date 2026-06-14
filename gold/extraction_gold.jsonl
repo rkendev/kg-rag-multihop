@@ -1,0 +1,97 @@
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "date of birth", "object": "11 October 1926", "subj_span": [0, 14], "obj_span": [16, 31]}
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "date of death", "object": "6 September 1994", "subj_span": [0, 14], "obj_span": [34, 50]}
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "country of citizenship", "object": "Italy", "subj_span": [0, 14], "obj_span": null}
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "occupation", "object": "director", "subj_span": [0, 14], "obj_span": [67, 75]}
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "occupation", "object": "screenwriter", "subj_span": [0, 14], "obj_span": [77, 89]}
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "occupation", "object": "actor", "subj_span": [0, 14], "obj_span": [94, 99]}
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "place of birth", "object": "Genoa", "subj_span": [0, 14], "obj_span": [162, 167]}
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "place of death", "object": "Rome", "subj_span": [0, 14], "obj_span": [602, 606]}
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "cause of death", "object": "cancer", "subj_span": [0, 14], "obj_span": [592, 598]}
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "spouse", "object": "Lorella De Luca", "subj_span": [0, 14], "obj_span": [641, 656]}
+{"chunk_id": "c00725", "subject": "Duccio Tessari", "relation": "employer", "object": "RAI TV", "subj_span": [0, 14], "obj_span": [535, 541]}
+{"chunk_id": "c00725", "subject": "A Fistful of Dollars", "relation": "screenwriter", "object": "Duccio Tessari", "subj_span": [290, 310], "obj_span": [0, 14]}
+{"chunk_id": "c00725", "subject": "Lorella De Luca", "relation": "occupation", "object": "actress", "subj_span": [641, 656], "obj_span": [633, 640]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "publication date", "object": "1960", "subj_span": [0, 14], "obj_span": [20, 24]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "director", "object": "Fred Zinnemann", "subj_span": [0, 14], "obj_span": [520, 534]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "producer", "object": "Fred Zinnemann", "subj_span": [0, 14], "obj_span": [520, 534]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "screenwriter", "object": "Isobel Lennart", "subj_span": [0, 14], "obj_span": [431, 445]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "based on", "object": "Jon Cleary's novel of the same name", "subj_span": [0, 14], "obj_span": [451, 486]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "performer", "object": "Deborah Kerr", "subj_span": [0, 14], "obj_span": [249, 261]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "performer", "object": "Robert Mitchum", "subj_span": [0, 14], "obj_span": [263, 277]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "performer", "object": "Peter Ustinov", "subj_span": [0, 14], "obj_span": [283, 296]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "performer", "object": "Glynis Johns", "subj_span": [0, 14], "obj_span": [331, 343]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "performer", "object": "Dina Merrill", "subj_span": [0, 14], "obj_span": [345, 357]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "performer", "object": "Michael Anderson Jr.", "subj_span": [0, 14], "obj_span": [359, 379]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "performer", "object": "Chips Rafferty", "subj_span": [0, 14], "obj_span": [385, 399]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "genre", "object": "Australian meat pie Western", "subj_span": [0, 14], "obj_span": [554, 581]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "nominated for", "object": "Best Actress in a Leading Role", "subj_span": [0, 14], "obj_span": [652, 682]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "nominated for", "object": "Best Actress in a Supporting Role", "subj_span": [0, 14], "obj_span": [699, 732]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "nominated for", "object": "Best Director", "subj_span": [0, 14], "obj_span": [749, 762]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "nominated for", "object": "Best Picture", "subj_span": [0, 14], "obj_span": [764, 776]}
+{"chunk_id": "c00571", "subject": "The Sundowners", "relation": "nominated for", "object": "Best Writing, Screenplay Based on Material from Another Medium", "subj_span": [0, 14], "obj_span": [782, 844]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "date of birth", "object": "March 3, 1883", "subj_span": [0, 12], "obj_span": [14, 27]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "date of death", "object": "January 22, 1940", "subj_span": [0, 12], "obj_span": [30, 46]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "occupation", "object": "director", "subj_span": [0, 12], "obj_span": [85, 93]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "occupation", "object": "actor", "subj_span": [0, 12], "obj_span": [95, 100]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "occupation", "object": "producer", "subj_span": [0, 12], "obj_span": [102, 110]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "occupation", "object": "screenwriter", "subj_span": [0, 12], "obj_span": [116, 128]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "birth name", "object": "Jay John Fox", "subj_span": [0, 12], "obj_span": [149, 161]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "place of birth", "object": "Gainesville, Texas", "subj_span": [0, 12], "obj_span": [178, 196]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "father", "object": "Frank Fox", "subj_span": [0, 12], "obj_span": [210, 219]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "mother", "object": "Sallie( Priddy) Fox", "subj_span": [0, 12], "obj_span": [243, 262]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "sibling", "object": "F. Finis", "subj_span": [0, 12], "obj_span": [306, 314]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "sibling", "object": "Wallace Carewe", "subj_span": [0, 12], "obj_span": [319, 333]}
+{"chunk_id": "c02012", "subject": "Edwin Carewe", "relation": "member of", "object": "Chickasaw Nation", "subj_span": [0, 12], "obj_span": [363, 379]}
+{"chunk_id": "c00090", "subject": "GlobalPost", "relation": "inception", "object": "January 12, 2009", "subj_span": [0, 10], "obj_span": [100, 116]}
+{"chunk_id": "c00090", "subject": "GlobalPost", "relation": "founded by", "object": "Philip S. Balboni", "subj_span": [0, 10], "obj_span": [121, 138]}
+{"chunk_id": "c00090", "subject": "GlobalPost", "relation": "founded by", "object": "Charles M. Sennott", "subj_span": [0, 10], "obj_span": [143, 161]}
+{"chunk_id": "c00090", "subject": "GlobalPost", "relation": "country", "object": "US", "subj_span": [0, 10], "obj_span": [24, 26]}
+{"chunk_id": "c00090", "subject": "GlobalPost", "relation": "acquired by", "object": "WGBH", "subj_span": [0, 10], "obj_span": [491, 495]}
+{"chunk_id": "c00257", "subject": "New Women", "relation": "publication date", "object": "1935", "subj_span": [0, 9], "obj_span": [65, 69]}
+{"chunk_id": "c00257", "subject": "New Women", "relation": "country of origin", "object": "China", "subj_span": [0, 9], "obj_span": [694, 699]}
+{"chunk_id": "c00257", "subject": "New Women", "relation": "production company", "object": "Lianhua Film Company", "subj_span": [0, 9], "obj_span": [77, 97]}
+{"chunk_id": "c00257", "subject": "New Women", "relation": "performer", "object": "Ruan Lingyu", "subj_span": [0, 9], "obj_span": [157, 168]}
+{"chunk_id": "c00257", "subject": "New Women", "relation": "director", "object": "Cai Chusheng", "subj_span": [0, 9], "obj_span": [215, 227]}
+{"chunk_id": "c00257", "subject": "New Women", "relation": "based on", "object": "Ai Xia", "subj_span": [0, 9], "obj_span": [480, 486]}
+{"chunk_id": "c00257", "subject": "Ai Xia", "relation": "occupation", "object": "actress", "subj_span": [480, 486], "obj_span": [460, 467]}
+{"chunk_id": "c00257", "subject": "Ai Xia", "relation": "occupation", "object": "writer", "subj_span": [480, 486], "obj_span": [472, 478]}
+{"chunk_id": "c00257", "subject": "Ai Xia", "relation": "country of citizenship", "object": "China", "subj_span": [480, 486], "obj_span": [694, 699]}
+{"chunk_id": "c00257", "subject": "Ai Xia", "relation": "date of death", "object": "1934", "subj_span": [480, 486], "obj_span": [370, 374]}
+{"chunk_id": "c00257", "subject": "Ai Xia", "relation": "cause of death", "object": "suicide", "subj_span": [480, 486], "obj_span": [319, 326]}
+{"chunk_id": "c00257", "subject": "A Modern Woman", "relation": "performer", "object": "Ai Xia", "subj_span": [560, 574], "obj_span": [480, 486]}
+{"chunk_id": "c00257", "subject": "A Modern Woman", "relation": "publication date", "object": "1933", "subj_span": [560, 574], "obj_span": [576, 580]}
+{"chunk_id": "c00282", "subject": "Jeremy Camp", "relation": "date of birth", "object": "January 12, 1978", "subj_span": null, "obj_span": [25, 41]}
+{"chunk_id": "c00282", "subject": "Jeremy Camp", "relation": "country of citizenship", "object": "United States", "subj_span": null, "obj_span": null}
+{"chunk_id": "c00282", "subject": "Jeremy Camp", "relation": "occupation", "object": "singer", "subj_span": null, "obj_span": [87, 93]}
+{"chunk_id": "c00282", "subject": "Jeremy Camp", "relation": "occupation", "object": "songwriter", "subj_span": null, "obj_span": [98, 108]}
+{"chunk_id": "c00282", "subject": "Jeremy Camp", "relation": "genre", "object": "contemporary Christian music", "subj_span": null, "obj_span": [58, 86]}
+{"chunk_id": "c00282", "subject": "Jeremy Camp", "relation": "place of birth", "object": "Lafayette, Indiana", "subj_span": null, "obj_span": [114, 132]}
+{"chunk_id": "c00282", "subject": "Jeremy Camp", "relation": "award received", "object": "GMA Dove Award", "subj_span": null, "obj_span": [326, 340]}
+{"chunk_id": "c00282", "subject": "Jeremy Camp", "relation": "nominated for", "object": "American Music Award", "subj_span": null, "obj_span": [372, 392]}
+{"chunk_id": "c00282", "subject": "Jeremy Camp", "relation": "nominated for", "object": "Grammy Award", "subj_span": null, "obj_span": [419, 431]}
+{"chunk_id": "c00282", "subject": "Speaking Louder Than Before", "relation": "performer", "object": "Jeremy Camp", "subj_span": [495, 522], "obj_span": null}
+{"chunk_id": "c00758", "subject": "Edwin August", "relation": "date of birth", "object": "November 10, 1883", "subj_span": [0, 12], "obj_span": [35, 52]}
+{"chunk_id": "c00758", "subject": "Edwin August", "relation": "date of death", "object": "March 4, 1964", "subj_span": [0, 12], "obj_span": [55, 68]}
+{"chunk_id": "c00758", "subject": "Edwin August", "relation": "country of citizenship", "object": "United States", "subj_span": [0, 12], "obj_span": null}
+{"chunk_id": "c00758", "subject": "Edwin August", "relation": "occupation", "object": "actor", "subj_span": [0, 12], "obj_span": [86, 91]}
+{"chunk_id": "c00758", "subject": "Edwin August", "relation": "occupation", "object": "director", "subj_span": [0, 12], "obj_span": [93, 101]}
+{"chunk_id": "c00758", "subject": "Edwin August", "relation": "occupation", "object": "screenwriter", "subj_span": [0, 12], "obj_span": [107, 119]}
+{"chunk_id": "c00758", "subject": "Eaco Films", "relation": "founded by", "object": "Edwin August", "subj_span": [250, 260], "obj_span": [0, 12]}
+{"chunk_id": "c00758", "subject": "Eaco Films", "relation": "inception", "object": "1914", "subj_span": [250, 260], "obj_span": [264, 268]}
+{"chunk_id": "c00758", "subject": "Edwin August", "relation": "place of birth", "object": "Saint Louis, Missouri", "subj_span": [0, 12], "obj_span": [285, 306]}
+{"chunk_id": "c00758", "subject": "Edwin August", "relation": "place of death", "object": "Hollywood, California", "subj_span": [0, 12], "obj_span": [319, 340]}
+{"chunk_id": "c00758", "subject": "Edwin August", "relation": "place of burial", "object": "Valhalla Memorial Park Cemetery", "subj_span": [0, 12], "obj_span": [366, 397]}
+{"chunk_id": "c00758", "subject": "Edwin August", "relation": "birth name", "object": "Edwin August Phillip von der Butz", "subj_span": [0, 12], "obj_span": [0, 33]}
+{"chunk_id": "c01351", "subject": "Karel Lamač", "relation": "date of birth", "object": "27 January 1897", "subj_span": [0, 11], "obj_span": [13, 28]}
+{"chunk_id": "c01351", "subject": "Karel Lamač", "relation": "date of death", "object": "2 August 1952", "subj_span": [0, 11], "obj_span": [31, 44]}
+{"chunk_id": "c01351", "subject": "Karel Lamač", "relation": "country of citizenship", "object": "Czech", "subj_span": [0, 11], "obj_span": [52, 57]}
+{"chunk_id": "c01351", "subject": "Karel Lamač", "relation": "occupation", "object": "director", "subj_span": [0, 11], "obj_span": [63, 71]}
+{"chunk_id": "c01351", "subject": "Karel Lamač", "relation": "occupation", "object": "actor", "subj_span": [0, 11], "obj_span": [73, 78]}
+{"chunk_id": "c01351", "subject": "Karel Lamač", "relation": "occupation", "object": "screenwriter", "subj_span": [0, 11], "obj_span": [80, 92]}
+{"chunk_id": "c01351", "subject": "Karel Lamač", "relation": "occupation", "object": "producer", "subj_span": [0, 11], "obj_span": [97, 105]}
+{"chunk_id": "c01351", "subject": "Karel Lamač", "relation": "place of birth", "object": "Prague, Austria-Hungary", "subj_span": [0, 11], "obj_span": [219, 242]}
+{"chunk_id": "c01351", "subject": "Karel Lamač", "relation": "place of death", "object": "Hamburg, Germany", "subj_span": [0, 11], "obj_span": [255, 271]}
+{"chunk_id": "c01351", "subject": "Karel Lamač", "relation": "cause of death", "object": "serious problems of his kidneys and liver", "subj_span": [0, 11], "obj_span": [279, 320]}
+{"chunk_id": "c01351", "subject": "Anny Ondra", "relation": "occupation", "object": "actress", "subj_span": [363, 373], "obj_span": [355, 362]}
+{"chunk_id": "c01351", "subject": "Anny Ondra", "relation": "spouse", "object": "Max Schmeling", "subj_span": [363, 373], "obj_span": [591, 604]}
+{"chunk_id": "c01351", "subject": "Max Schmeling", "relation": "occupation", "object": "boxer", "subj_span": [591, 604], "obj_span": [585, 590]}
