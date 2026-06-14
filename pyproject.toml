@@ -12,6 +12,7 @@ dependencies = [
     "numpy>=1.26,<2",
     "requests>=2.31,<3",
     "tqdm>=4.66,<5",
+    "gliner>=0.2.26",
 ]
 
 [build-system]

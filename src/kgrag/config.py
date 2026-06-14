@@ -27,6 +27,11 @@ QUESTIONS_PATH = GOLD / "questions.jsonl"
 NO_KNOWLEDGE_PATH = GOLD / "no_knowledge.jsonl"
 TEST_IDS_PATH = GOLD / "test_ids.txt"
 
+# --- P1 extraction gate ---
+EXTRACTION_GOLD_PATH = GOLD / "extraction_gold.jsonl"
+EXTRACTION_DIR = PROCESSED / "extraction"
+EXTRACTION_PRED_PATH = EXTRACTION_DIR / "predictions.jsonl"
+
 DEV_JSON = RAW / "dev.json"  # extracted from the official data.zip
 
 # ---------------------------------------------------------------------------
@@ -77,3 +82,17 @@ RETRIEVE_POOL = 50               # candidates pulled from each leg before fusion
 
 # Sentinel the generator must emit when context cannot support an answer.
 ABSTAIN_TOKEN = "INSUFFICIENT"
+
+# ---------------------------------------------------------------------------
+# P1 — local triple extraction (GLiNER entities + Ollama qwen relations)
+# ---------------------------------------------------------------------------
+GLINER_MODEL = "urchade/gliner_medium-v2.1"  # open-schema NER, CPU, cached after first pull
+GLINER_THRESHOLD = 0.4                        # span confidence floor (recorded per entity)
+# Open entity schema (GLiNER zero-shot labels). Kept broad so relation extraction has
+# spans to connect; the relation set is what the gate actually measures.
+ENTITY_LABELS = [
+    "person", "organization", "company", "location", "country", "city",
+    "creative work", "film", "album", "song", "book",
+    "date", "role", "occupation", "award", "nationality",
+]
+EXTRACT_MODEL = GEN_MODEL  # qwen2.5:7b-instruct, JSON mode, temp 0 for relations

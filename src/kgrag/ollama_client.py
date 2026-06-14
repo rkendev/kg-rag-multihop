@@ -17,8 +17,13 @@ def generate(
     temperature: float = 0.0,
     num_predict: int = 256,
     timeout: int = 600,
+    format: str | None = None,
 ) -> str:
-    """Single-shot, non-streaming completion. Returns the response text."""
+    """Single-shot, non-streaming completion. Returns the response text.
+
+    ``format="json"`` enables Ollama's constrained JSON output (used by P1 relation
+    extraction so the reply is always parseable).
+    """
     payload = {
         "model": model,
         "prompt": prompt,
@@ -32,6 +37,8 @@ def generate(
     }
     if system is not None:
         payload["system"] = system
+    if format is not None:
+        payload["format"] = format
     resp = requests.post(
         f"{config.OLLAMA_HOST}/api/generate", json=payload, timeout=timeout
     )
