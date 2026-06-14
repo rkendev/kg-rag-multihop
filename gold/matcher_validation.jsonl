@@ -1,0 +1,20 @@
+{"pred": ["I.B.M.", "founded by", "Thomas Watson"], "gold": ["IBM", "founded by", "Thomas Watson"], "should_match": true, "note": "acronym dotting normalizes to same entity"}
+{"pred": ["Duccio Tessari", "born on", "11 October 1926"], "gold": ["Duccio Tessari", "date of birth", "11 October 1926"], "should_match": true, "note": "relation synonym + identical date"}
+{"pred": ["Duccio Tessari", "born in", "Genoa"], "gold": ["Duccio Tessari", "place of birth", "Genoa"], "should_match": true, "note": "born in -> place of birth"}
+{"pred": ["The Sundowners", "directed by", "Fred Zinnemann"], "gold": ["The Sundowners", "director", "Fred Zinnemann"], "should_match": true, "note": "directed by -> director"}
+{"pred": ["Jeremy Camp", "date of birth", "1978"], "gold": ["Jeremy Camp", "date of birth", "January 12, 1978"], "should_match": true, "note": "partial date, year agrees"}
+{"pred": ["Edwin Carewe", "nationality", "American"], "gold": ["Edwin Carewe", "country of citizenship", "United States"], "should_match": true, "note": "demonym alias + relation synonym"}
+{"pred": ["New Women", "release date", "1935"], "gold": ["New Women", "publication date", "1935"], "should_match": true, "note": "release date -> publication date"}
+{"pred": ["Edwin August", "occupation", "film director"], "gold": ["Edwin August", "occupation", "director"], "should_match": true, "note": "token subset on occupation value"}
+{"pred": ["Karel Lamac", "died in", "Hamburg"], "gold": ["Karel Lamač", "place of death", "Hamburg, Germany"], "should_match": true, "note": "diacritic + place containment"}
+{"pred": ["Speaking Louder Than Before", "performer", "Jeremy Camp"], "gold": ["Speaking Louder Than Before", "performer", "Jeremy Thomas Camp"], "should_match": true, "note": "middle-name subset"}
+{"pred": ["Edwin August", "place of burial", "Valhalla Memorial Park"], "gold": ["Edwin August", "place of burial", "Valhalla Memorial Park Cemetery"], "should_match": true, "note": "multi-token place containment"}
+{"pred": ["Edwin Carewe", "father", "Sallie Fox"], "gold": ["Edwin Carewe", "mother", "Sallie( Priddy) Fox"], "should_match": false, "note": "wrong relation: father vs mother"}
+{"pred": ["The Sundowners", "nominated for", "Best Actress in a Leading Role"], "gold": ["The Sundowners", "nominated for", "Best Actress in a Supporting Role"], "should_match": false, "note": "different award (leading vs supporting)"}
+{"pred": ["Edwin Carewe", "father", "Sallie Fox"], "gold": ["Edwin Carewe", "father", "Frank Fox"], "should_match": false, "note": "different person, same surname only"}
+{"pred": ["Duccio Tessari", "date of birth", "11 October 1926"], "gold": ["Duccio Tessari", "date of death", "6 September 1994"], "should_match": false, "note": "wrong relation and value"}
+{"pred": ["New Women", "director", "Ruan Lingyu"], "gold": ["New Women", "performer", "Ruan Lingyu"], "should_match": false, "note": "director vs performer"}
+{"pred": ["Duccio Tessari", "screenwriter", "A Fistful of Dollars"], "gold": ["A Fistful of Dollars", "screenwriter", "Duccio Tessari"], "should_match": false, "note": "reversed direction"}
+{"pred": ["Karel Lamač", "place of birth", "Prague"], "gold": ["Karel Lamač", "place of death", "Hamburg, Germany"], "should_match": false, "note": "wrong relation and place"}
+{"pred": ["Jeremy Camp", "spouse", "Adrienne Camp"], "gold": ["Jeremy Camp", "occupation", "singer"], "should_match": false, "note": "unrelated"}
+{"pred": ["Edwin Carewe", "father", "Fox"], "gold": ["Edwin Carewe", "father", "Frank Fox"], "should_match": false, "note": "bare surname is ambiguous (mother is also Fox) -> should not merge"}
