@@ -21,6 +21,10 @@ baseline:
 eval:
     uv run python -m kgrag.eval.run_eval
 
+# Confirm the gated, deterministic metrics recompute exactly from the scored run.
+verify:
+    uv run python -m kgrag.eval.verify_repro
+
 # Remove regenerable artifacts (keeps frozen corpus + gold sets).
 clean-runs:
     rm -rf data/processed/runs data/processed/embeddings.npy data/processed/faiss.index data/processed/bm25.pkl

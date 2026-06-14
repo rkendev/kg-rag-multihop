@@ -2,6 +2,7 @@
 data/raw/
 
 # Local index / embedding artifacts (regenerable)
+data/processed/*.log
 data/processed/*.npy
 data/processed/*.index
 data/processed/*.faiss
