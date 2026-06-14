@@ -86,9 +86,39 @@ recorded in [`BASELINE.md`](BASELINE.md). No graph code exists yet — by design
 - Faithfulness/citation are advisory-only (provisional judge); only EM/token-F1 and
   support recall@k are gated targets.
 
-**P1 scope (not started):** entity/relation extraction over the corpus, entity resolution,
-a graph index, and retrieval-traversal that assembles multi-hop evidence — justified only
-if it beats the targets above, especially on the 4-hop subset.
+## P1 → P2 handoff
+
+**Status:** P1 closed — **GATE PASSED (GO)**. Local triple extraction was measured against a
+frozen hand-annotated gold and an entity-resolution-aware matcher; the result is recorded in
+[`EXTRACTION_BASELINE.md`](EXTRACTION_BASELINE.md). No graph was built in P1 — by design; P1
+only decides whether one is worth building.
+
+**The extraction gate** (hand gold, 97 triples over 8 frozen-corpus paragraphs):
+
+- Overall triple **F1 = 0.613** (precision 0.640, recall 0.588).
+- **Core-relation F1 = 0.903** over the bridge-carrying relations (`director`, `father`,
+  `spouse`, `date of birth`, `place of birth`).
+- Matcher validated at 20/20 agreement on hand-judged pairs; F1 recomputes exactly from the
+  stored predictions (`just verify-extraction`).
+- Decision: overall F1 landed in the near-the-line band [0.55, 0.65); per the pre-committed
+  rule the core-relation F1 (≥ 0.60) decides it → **GO** to P2.
+
+**Carry into P2 (weak predicates / extractor fixes — see EXTRACTION_BASELINE.md):**
+
+- `performer` is systematically **direction-reversed** (actor as subject); pin subject = the
+  work in the P2 extraction schema to recover it.
+- `nominated for` / `award received` fold the award into the relation string; constrain the
+  relation schema.
+- Re-measure extraction quality at corpus scale before relying on any single-digit-support
+  relation — the gate gold is small (go/no-go signal, not calibrated accuracy).
+
+**Frozen P1 artifacts:** `gold/ANNOTATION_GUIDELINE.md`, `gold/extraction_gold.jsonl`,
+`gold/alias_table.json`, `gold/relation_synonyms.json`, `gold/matcher_validation.jsonl`, and
+`data/processed/extraction/predictions.jsonl` (the one-time extractor output).
+
+**P2 scope (not started):** full-corpus entity/relation extraction, corpus-scale entity
+resolution, a graph index, and retrieval-traversal that assembles multi-hop evidence —
+justified only if it beats the P0 targets above, especially on the 4-hop subset.
 
 ## License
 
