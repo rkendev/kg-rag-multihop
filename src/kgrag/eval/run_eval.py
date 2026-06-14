@@ -126,9 +126,11 @@ def write_baseline_md(stats: dict, overall: dict, by_type: dict, by_count: dict,
     A(header)
     A(_row("**overall (multi-hop target)**", overall))
     A("")
-    A(f"- Faithfulness (judged, provisional): **{pct(overall['faithful'])}%** "
+    A(f"- Faithfulness (judged, **advisory only**): {pct(overall['faithful'])}% "
       f"over {overall['n_judged']} answered questions.")
-    A(f"- Citation correctness (judged, provisional): **{pct(overall['citations_correct'])}%**.")
+    A(f"- Citation correctness (judged, **advisory only**): {pct(overall['citations_correct'])}%.")
+    A("  - _These two are PROVISIONAL and **not gated**: the local judge is non-deterministic "
+      "on CPU and uncalibrated (P4 concern). Treat as directional signal, not a recorded target._")
     A(f"- Over-abstention on answerable test questions: {pct(overall['over_abstain'])}% "
       f"(lower is better; these questions have supporting evidence in the corpus).\n")
 
@@ -165,9 +167,12 @@ def write_baseline_md(stats: dict, overall: dict, by_type: dict, by_count: dict,
     A("```bash\njust build-corpus   # deterministic given the pinned seed\n"
       "just baseline       # hybrid retrieval + generation over the test slice\n"
       "just eval           # rewrites this file\n```\n")
-    A("Notes: hop_type maps the dataset's `inference` → `bridge`. Faithfulness/citation "
-      "numbers are PROVISIONAL pending judge calibration (P4). Retrieval/EM/F1 are fully "
-      "deterministic; generation and judging use temperature 0 with a fixed seed.")
+    A("Notes: hop_type maps the dataset's `inference` → `bridge`. The gated, recorded "
+      "targets — answer EM/token-F1 and support recall@k — are fully deterministic and "
+      "recompute exactly from the stored scored run (`python -m kgrag.eval.verify_repro`). "
+      "Generation uses temperature 0 with a fixed seed. Faithfulness/citation are advisory "
+      "only: the local judge is provisional and non-deterministic on CPU, so its "
+      "reproducibility is intentionally NOT gated (judge calibration is a P4 concern).")
 
     config.ROOT.joinpath("BASELINE.md").write_text("\n".join(L) + "\n", encoding="utf-8")
 
