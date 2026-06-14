@@ -54,7 +54,41 @@ just bootstrap       # uv sync + verify python pin and ollama tags
 just build-corpus    # download 2Wiki, freeze corpus + gold sets
 just baseline        # build hybrid index, run retrieval + generation on the test slice
 just eval            # score and write BASELINE.md
+just verify          # confirm the gated deterministic metrics recompute exactly
 ```
+
+## P0 → P1 handoff
+
+**Status:** P0 closed. The corpus and gold sets are frozen, and the flat-RAG baseline is
+recorded in [`BASELINE.md`](BASELINE.md). No graph code exists yet — by design.
+
+**The number to beat** (held-out test, n=100, all multi-hop):
+
+- Overall: **answer token-F1 22.1**, EM 21.0, **support recall@5 74.2**.
+- Hardest subset — 4-hop `bridge_comparison`: **F1 21.7**, **recall@5 55.4** (n=23).
+
+**Where flat RAG breaks (the opening for the graph):**
+
+- The *second hop* is not co-retrieved — recall@5 falls from 79.9 (2-hop) to 55.4 (4-hop),
+  because bridge entities (a film's director, a person's parent) sit in paragraphs the
+  question text doesn't lexically or semantically reach.
+- The generator over-abstains: 54% of answerable test questions get `INSUFFICIENT`, 53/54
+  of them *despite* having gold evidence in context — partial single-hop evidence reads as
+  insufficient for a multi-hop chain.
+
+**Ground rules carried into P1:**
+
+- The corpus (`data/processed/corpus.jsonl`, SHA in BASELINE.md), `gold/*`, and the
+  `gold/test_ids.txt` test slice are **frozen** — do not regenerate or tune against them.
+  P1 is measured on the same slice with the same metrics so numbers are comparable.
+- This baseline's hybrid retrieval (`src/kgrag/baseline/`) is written to be **reused as the
+  hybrid leg** of the graph system; extend, don't replace.
+- Faithfulness/citation are advisory-only (provisional judge); only EM/token-F1 and
+  support recall@k are gated targets.
+
+**P1 scope (not started):** entity/relation extraction over the corpus, entity resolution,
+a graph index, and retrieval-traversal that assembles multi-hop evidence — justified only
+if it beats the targets above, especially on the 4-hop subset.
 
 ## License
 
