@@ -30,7 +30,23 @@ TEST_IDS_PATH = GOLD / "test_ids.txt"
 # --- P1 extraction gate ---
 EXTRACTION_GOLD_PATH = GOLD / "extraction_gold.jsonl"
 EXTRACTION_DIR = PROCESSED / "extraction"
-EXTRACTION_PRED_PATH = EXTRACTION_DIR / "predictions.jsonl"
+EXTRACTION_PRED_PATH = EXTRACTION_DIR / "predictions.jsonl"  # FROZEN P1 gate artifact — never overwrite
+
+# --- P2 graph build ---
+# Post-fix re-verification of the extractor on the frozen 8-paragraph gold (Step 0).
+EXTRACTION_PRED_POSTFIX_PATH = EXTRACTION_DIR / "predictions_gold_postfix.jsonl"
+# Full-corpus extraction output (Step 1), written checkpointed/resumable per chunk.
+EXTRACTION_PRED_CORPUS_PATH = EXTRACTION_DIR / "predictions_corpus.jsonl"
+RESOLUTION_DIR = PROCESSED / "resolution"
+RESOLUTION_ENTITIES_PATH = RESOLUTION_DIR / "entities.jsonl"
+RESOLUTION_TRIPLES_PATH = RESOLUTION_DIR / "triples_resolved.jsonl"
+GRAPH_DIR = DATA / "graph"            # versioned graph + index live under here (v1/, current symlink)
+
+# Entity-resolution thresholds (conservative; over-merging is the gated failure).
+RESOLVE_FUZZ_RATIO = 92               # rapidfuzz token_set_ratio floor (0-100)
+RESOLVE_COSINE = 0.86                 # bge-small cosine floor
+# Low-confidence triple flag (a threshold + log line, NOT a quarantine pipeline).
+LOW_CONFIDENCE = 0.5
 
 DEV_JSON = RAW / "dev.json"  # extracted from the official data.zip
 

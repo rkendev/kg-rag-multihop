@@ -18,6 +18,7 @@ the model (see ``extraction_eval`` / ``verify_extraction``).
 from __future__ import annotations
 
 import json
+import re
 import sys
 
 from .. import config
@@ -36,6 +37,12 @@ RELATION_VOCAB = [
     "occupation",
 ]
 
+# The extractor prompt is the EXACT P1 prompt (verified F1 0.613, with father/mother/director/
+# award-received already in the correct direction). The two P1 bugs — `performer` reversed and
+# `nominated for` folding the award into the relation string — are fixed DETERMINISTICALLY in
+# ``canonicalize_triples`` below, not via prompt rules: a 7B model degrades when the prompt grows
+# (longer rule/example blocks measurably worsened compliance and broke previously-correct
+# relations), whereas the post-process is reliable and reproducible.
 SYSTEM = (
     "You are an information-extraction system. From a single paragraph you output factual "
     "triples (subject, relation, object) that are explicitly stated or unambiguously "
@@ -56,6 +63,23 @@ Allowed relations (use the closest one; subject is the entity the fact is about)
 Extract every true triple. For each, give a confidence in [0,1].
 Respond with JSON exactly of the form:
 {{"triples": [{{"subject": "...", "relation": "...", "object": "...", "confidence": 0.0}}]}}"""
+
+# --- Deterministic schema fixes for the two P1 bugs (applied after the LLM emits triples) ---
+
+# Relations whose canonical direction is (work, relation, person/org). GLiNER types decide when a
+# triple is reversed; only person/org<->work flips are touched, so correctly-oriented triples and
+# unrelated relations (father, spouse, ...) are never altered.
+_WORK_SUBJECT_RELATIONS = {
+    "performer", "director", "producer", "composer", "screenwriter", "production company",
+}
+_WORK_TYPES = {"creative work", "film", "album", "song", "book"}
+_PERSONORG_TYPES = {"person", "organization", "company"}
+# "nominated for Best Actress...", "award nominated for X", "won the X Award", "received X"
+_AWARD_PREFIX = re.compile(
+    r"^(?:award\s+)?(nominated for|award received|won|received|awarded)\b[\s:]*",
+    re.IGNORECASE,
+)
+_NOMINATED = re.compile(r"\bnominated\b", re.IGNORECASE)
 
 
 def load_gold_chunk_ids() -> list[str]:
@@ -79,16 +103,20 @@ def extract_entities(model, text: str) -> list[dict]:
 
 
 def _entity_provenance(surface: str, ents: list[dict], text: str):
-    """Best-effort char span + GLiNER score for a triple element."""
+    """Best-effort char span + GLiNER score + entity label/type for a triple element.
+
+    The label feeds type-blocked entity resolution in P2; ``None`` when the surface is a
+    literal/date taken verbatim from the text rather than a detected GLiNER span.
+    """
     n = surface.strip().lower()
     for e in ents:
         if e["text"].strip().lower() == n:
-            return [e["start"], e["end"]], round(float(e["score"]), 4)
+            return [e["start"], e["end"]], round(float(e["score"]), 4), e["label"]
     for e in ents:  # containment fallback (e.g. "Genoa" within "Genoa, Italy")
         if n and (n in e["text"].lower() or e["text"].lower() in n):
-            return [e["start"], e["end"]], round(float(e["score"]), 4)
+            return [e["start"], e["end"]], round(float(e["score"]), 4), e["label"]
     i = text.lower().find(n)
-    return ([i, i + len(surface)] if i >= 0 else None), None
+    return ([i, i + len(surface)] if i >= 0 else None), None, None
 
 
 def extract_relations(text: str, ents: list[dict]) -> list[dict]:
@@ -112,48 +140,106 @@ def extract_relations(text: str, ents: list[dict]) -> list[dict]:
     return [t for t in triples if isinstance(t, dict) and t.get("subject") and t.get("relation") and t.get("object")]
 
 
-def main() -> int:
-    from gliner import GLiNER  # heavy import; only when actually extracting
+def unfold_award(relation: str, obj: str) -> tuple[str, str]:
+    """Bug-2 fix: split an award folded into the relation string into a bare relation + award.
 
-    chunk_ids = load_gold_chunk_ids()
-    corpus = {c["chunk_id"]: c for c in corpus_io.load_corpus()}
+    "nominated for Best Actress in a Leading Role" / obj="Deborah Kerr"
+        -> ("nominated for", "Best Actress in a Leading Role")
+    "award nominated for" / obj="Grammy Award"   -> ("nominated for", "Grammy Award")   [unchanged obj]
+    "award received" / obj="GMA Dove Award"       -> ("award received", "GMA Dove Award") [unchanged]
+    A non-award relation is returned untouched.
+    """
+    m = _AWARD_PREFIX.match(relation.strip())
+    if not m:
+        return relation, obj
+    canonical = "nominated for" if _NOMINATED.search(relation) else "award received"
+    trailing = relation.strip()[m.end():].strip(" :,-")
+    # The folded award lives in the relation tail; if present it is the true object.
+    return canonical, (trailing if trailing else obj)
+
+
+def load_ner():
+    """Load the GLiNER model once (heavy import; only when actually extracting)."""
+    from gliner import GLiNER
+
     print(f"[extract] loading GLiNER {config.GLINER_MODEL} ...", flush=True)
     ner = GLiNER.from_pretrained(config.GLINER_MODEL)
-    print(f"[extract] GLiNER ready; extracting from {len(chunk_ids)} gold paragraphs", flush=True)
+    print("[extract] GLiNER ready", flush=True)
+    return ner
 
-    config.EXTRACTION_DIR.mkdir(parents=True, exist_ok=True)
+
+def extract_chunk_records(ner, cid: str, text: str) -> list[dict]:
+    """Extract all predicted triples for one chunk, with full provenance + confidence.
+
+    Reused by the gold re-verify (Step 0) and the resumable full-corpus batch (Step 1) so
+    both runs use the identical extractor. ``subj_type``/``obj_type`` carry the GLiNER label
+    for type-blocked entity resolution; ``low_confidence`` flags triples below the threshold.
+    """
+    ents = extract_entities(ner, text)
+    triples = extract_relations(text, ents)
+    records = []
+    for t in triples:
+        subj, rel, obj = str(t["subject"]), str(t["relation"]), str(t["object"])
+        # Bug-2: unfold an award baked into the relation string into a bare relation + award object.
+        rel, obj = unfold_award(rel, obj)
+        ss, sscore, stype = _entity_provenance(subj, ents, text)
+        os_, oscore, otype = _entity_provenance(obj, ents, text)
+        # Bug-1: orient work<->person/org relations so the WORK is the subject. Only flips a
+        # person/org-subject + work-object triple; correctly-oriented and unrelated triples
+        # (father, spouse, place of birth, ...) are left exactly as the model emitted them.
+        rel_norm = rel.strip().lower()
+        if rel_norm in _WORK_SUBJECT_RELATIONS and stype in _PERSONORG_TYPES and otype in _WORK_TYPES:
+            subj, obj = obj, subj
+            ss, os_ = os_, ss
+            sscore, oscore = oscore, sscore
+            stype, otype = otype, stype
+        try:
+            conf = float(t.get("confidence"))
+        except (TypeError, ValueError):
+            conf = None
+        records.append({
+            "chunk_id": cid,
+            "subject": subj,
+            "relation": rel,
+            "object": obj,
+            "subj_span": ss,
+            "obj_span": os_,
+            "subj_gliner_score": sscore,
+            "obj_gliner_score": oscore,
+            "subj_type": stype,
+            "obj_type": otype,
+            "llm_confidence": conf,
+            "low_confidence": (conf is not None and conf < config.LOW_CONFIDENCE),
+            "models": {"ner": config.GLINER_MODEL, "relations": config.EXTRACT_MODEL},
+        })
+    return records, len(ents)
+
+
+def run_extraction(chunk_ids: list[str], out_path, *, ner=None) -> int:
+    """Extract from the given chunks and write all records to ``out_path`` (one JSON/line).
+
+    Used for the gold re-verify; the full-corpus batch streams/checkpoints separately (see
+    ``kgrag.graph.extract_corpus``).
+    """
+    ner = ner or load_ner()
+    corpus = {c["chunk_id"]: c for c in corpus_io.load_corpus()}
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     records = []
     for i, cid in enumerate(chunk_ids, 1):
-        text = corpus[cid]["text"]
-        ents = extract_entities(ner, text)
-        triples = extract_relations(text, ents)
-        print(f"[extract] {i}/{len(chunk_ids)} {cid}: {len(ents)} entities -> {len(triples)} triples", flush=True)
-        for t in triples:
-            subj, rel, obj = str(t["subject"]), str(t["relation"]), str(t["object"])
-            ss, sscore = _entity_provenance(subj, ents, text)
-            os_, oscore = _entity_provenance(obj, ents, text)
-            try:
-                conf = float(t.get("confidence"))
-            except (TypeError, ValueError):
-                conf = None
-            records.append({
-                "chunk_id": cid,
-                "subject": subj,
-                "relation": rel,
-                "object": obj,
-                "subj_span": ss,
-                "obj_span": os_,
-                "subj_gliner_score": sscore,
-                "obj_gliner_score": oscore,
-                "llm_confidence": conf,
-                "models": {"ner": config.GLINER_MODEL, "relations": config.EXTRACT_MODEL},
-            })
-
-    with open(config.EXTRACTION_PRED_PATH, "w", encoding="utf-8") as f:
+        recs, n_ents = extract_chunk_records(ner, cid, corpus[cid]["text"])
+        print(f"[extract] {i}/{len(chunk_ids)} {cid}: {n_ents} entities -> {len(recs)} triples", flush=True)
+        records.extend(recs)
+    with open(out_path, "w", encoding="utf-8") as f:
         for r in records:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
-    print(f"[extract] wrote {len(records)} predicted triples -> {config.EXTRACTION_PRED_PATH}", flush=True)
+    print(f"[extract] wrote {len(records)} predicted triples -> {out_path}", flush=True)
     return 0
+
+
+def main() -> int:
+    # Re-verify the FIXED extractor on the frozen 8-paragraph gold (Step 0). Writes to the
+    # post-fix path; the frozen P1 predictions.jsonl is left untouched.
+    return run_extraction(load_gold_chunk_ids(), config.EXTRACTION_PRED_POSTFIX_PATH)
 
 
 if __name__ == "__main__":
