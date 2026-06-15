@@ -13,6 +13,8 @@ dependencies = [
     "requests>=2.31,<3",
     "tqdm>=4.66,<5",
     "gliner>=0.2.26",
+    "kuzu>=0.11.3",
+    "rapidfuzz>=3.14.5",
 ]
 
 [build-system]

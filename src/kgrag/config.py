@@ -35,16 +35,24 @@ EXTRACTION_PRED_PATH = EXTRACTION_DIR / "predictions.jsonl"  # FROZEN P1 gate ar
 # --- P2 graph build ---
 # Post-fix re-verification of the extractor on the frozen 8-paragraph gold (Step 0).
 EXTRACTION_PRED_POSTFIX_PATH = EXTRACTION_DIR / "predictions_gold_postfix.jsonl"
-# Full-corpus extraction output (Step 1), written checkpointed/resumable per chunk.
+# Graph-corpus extraction output (Step 1), written checkpointed/resumable per chunk.
 EXTRACTION_PRED_CORPUS_PATH = EXTRACTION_DIR / "predictions_corpus.jsonl"
+# Optional scope: if this file exists, the graph corpus is restricted to these chunk_ids (one
+# per line). v1 scopes to the 100 test questions' support chunks (full qwen run is ~84h; this
+# bounds it to an overnight run). The FAISS/vector index stays over the full corpus regardless.
+GRAPH_CORPUS_IDS_PATH = EXTRACTION_DIR / "graph_corpus_ids.txt"
 RESOLUTION_DIR = PROCESSED / "resolution"
 RESOLUTION_ENTITIES_PATH = RESOLUTION_DIR / "entities.jsonl"
 RESOLUTION_TRIPLES_PATH = RESOLUTION_DIR / "triples_resolved.jsonl"
 GRAPH_DIR = DATA / "graph"            # versioned graph + index live under here (v1/, current symlink)
 
-# Entity-resolution thresholds (conservative; over-merging is the gated failure).
-RESOLVE_FUZZ_RATIO = 92               # rapidfuzz token_set_ratio floor (0-100)
-RESOLVE_COSINE = 0.86                 # bge-small cosine floor
+# Entity-resolution thresholds (conservative; over-merging is the gated failure). On top of
+# these, a structural guard (>=2 shared tokens, both multi-token, comparable length, no
+# conflicting regnal numerals) gates every fuzzy/embedding merge — raw token_set_ratio alone
+# over-merges badly (it scores any subset 100, so "Charles" pivots all the Charleses together).
+RESOLVE_FUZZ_RATIO = 92               # rapidfuzz floor (legacy; superseded by structural rules)
+RESOLVE_COSINE = 0.90                 # bge-small cosine floor (legacy; embedding path removed)
+RESOLVE_TYPO_RATIO = 93               # token_sort_ratio floor for the short-name typo catch
 # Low-confidence triple flag (a threshold + log line, NOT a quarantine pipeline).
 LOW_CONFIDENCE = 0.5
 
