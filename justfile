@@ -63,6 +63,21 @@ build-graph:
 verify-graph:
     uv run python -m kgrag.graph.verify_graph
 
+# --- P3: KG-RAG multi-hop retrieval (the thesis test) ---
+
+# Run KG-RAG end to end (graph-fused retrieval + UNCHANGED P0 generator) over the test slice
+# + no-knowledge set. Resumable/checkpointed; the generation pass runs ONCE. Background job.
+kgrag:
+    PYTHONUNBUFFERED=1 uv run python -u -m kgrag.graph.run_kgrag
+
+# Score the KG-RAG run with the SAME judge/metrics as P0 and write THESIS_RESULT.md.
+eval-kgrag:
+    uv run python -m kgrag.graph.eval_kgrag
+
+# P3 gate: deterministic metric recompute + fairness git-diff guardrail + 5-question spot-check.
+verify-kgrag:
+    uv run python -m kgrag.graph.verify_kgrag
+
 # Remove regenerable artifacts (keeps frozen corpus + gold sets).
 clean-runs:
     rm -rf data/processed/runs data/processed/embeddings.npy data/processed/faiss.index data/processed/bm25.pkl
