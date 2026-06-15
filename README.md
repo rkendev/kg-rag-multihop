@@ -120,6 +120,50 @@ only decides whether one is worth building.
 resolution, a graph index, and retrieval-traversal that assembles multi-hop evidence —
 justified only if it beats the P0 targets above, especially on the 4-hop subset.
 
+## P2 → P3 handoff
+
+**Status:** P2 closed — graph built and verified. Full record in
+[`GRAPH_BUILD.md`](GRAPH_BUILD.md). P2 ends at a trustworthy graph; it does **not** test the
+thesis (graph vs flat RAG) — that is P3.
+
+**Exit gate — entity-merge precision: PASSED.**
+
+- Post-fix extractor (Step-0, same frozen gold + matcher): overall **F1 0.742** (P1 0.613),
+  `performer` recall **0.80** (was 0), core-relation **F1 0.968**. Both P1 bugs fixed
+  deterministically (type-based direction orientation; `unfold_award`).
+- Corpus extraction: **246/246** test-support chunks, **2,481** triples, full provenance +
+  confidence, persisted once (`predictions_corpus.jsonl`).
+- **Merge precision = 0.930** (53/57 merged clusters correct; full census, gate ≥ 0.90). The 4
+  residuals are same-name-different-person cases separable only by birth years in prose.
+- Graph: **2,253** entities / **3,350** chunks / **2,481** RELATES edges (0 orphan, provenance on
+  every edge) + FAISS **3,350×384** (`bge-small`, pinned). Deterministic verify reproduces exactly.
+- Connectivity (under-merge guard): **254** bridging entities; bridge-entity resolution coverage
+  **0.897** on multi-hop test questions; ER recall proxy **0.807** (reported, not gated).
+
+**Scope decision to carry into P3 (operator-approved):** the **graph overlay** is built over the
+246 test-question support chunks (the full-corpus qwen run is ~84 h; this bounds it to one
+overnight run). The **FAISS/vector index is over the full 3,350-chunk corpus**, so the KG-vs-flat
+comparison varies only retrieval and stays fair. The corpus extraction is resumable
+(`just extract-corpus`), so the overlay can be grown to dev-support (~1,200 chunks) or the full
+corpus before P3 if broader graph coverage is wanted.
+
+**Carry into P3 / known limitations:**
+
+- Resolution is precision-first (conservative): ER recall ~0.81 — some same-entity surfaces stay
+  split (bare single-token names, comma-compound surfaces). Loosen thresholds only with a fresh
+  merge-precision check, never below the 0.90 gate.
+- A minority of edges carry off-vocab relation strings (e.g. "directed by"); they are true and
+  provenanced but not canonical — a P3 traversal/normalization concern, not a graph-integrity one.
+- 4 known same-name-different-person over-merges (see `GRAPH_BUILD.md`); all low-degree PERSON nodes.
+
+**Frozen P2 artifacts:** `data/processed/extraction/predictions_corpus.jsonl` (one-time extractor
+output), `data/processed/extraction/graph_corpus_ids.txt`, `data/processed/resolution/*`, and the
+built graph under `data/graph/v1/` (`current` → `v1`; the Kùzu/FAISS binaries are gitignored and
+rebuilt via `just build-graph`).
+
+**Do NOT start P3 in P2.** No query planner, question entity-linking, traversal, retrieval, RRF,
+generation, abstention, reranker, or P0-baseline comparison — all P3+.
+
 ## License
 
 Code: see repository. Dataset (2WikiMultiHopQA) is Apache-2.0; its license is retained
