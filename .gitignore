@@ -9,6 +9,12 @@ data/processed/*.faiss
 data/processed/bm25.pkl
 data/processed/runs/
 
+# P2 built graph index — large binaries, regenerable via `just build-graph` from the
+# committed resolution output (kept: manifest.json, chunk_ids.json, the current symlink).
+data/graph/*/kuzu
+data/graph/*/kuzu.wal
+data/graph/*/faiss.index
+
 # Env / secrets
 .env
 .env.*

@@ -1,0 +1,235 @@
+MERGED CLUSTERS (>=2 surface forms): 57  | total entities: 2253
+========================================================================
+[1] (MISC) canonical='American'  forms=3 chunks=43
+      - 'American'  [c00015]  :: (surface not located in chunk text)
+      - 'U.S.'  [c00015]  :: (surface not located in chunk text)
+      - 'United States'  [c00015]  :: " The Telegraph" stated that his best known of these film was probably" The Antichrist The Antichrist" capitalized on the box- office appeal of" The Exorcist"( 1973) and in its first week in the United States earned a greater box office tha
+
+[2] (PLACE) canonical='British'  forms=3 chunks=7
+      - 'British'  [c00402]  :: (surface not located in chunk text)
+      - 'UK'  [c00402]  :: (surface not located in chunk text)
+      - 'United Kingdom'  [c00402]  :: Rudolph Maté( 21 January 1898 – 27 October 1964), born Rudolf Mayer, was a Polish- Hungarian- American cinematographer, film director and film producer who worked as cameraman and cinematographer in Hungary, Austria, Germany, France and the
+
+[3] (PLACE) canonical='Czech Republic'  forms=3 chunks=3
+      - 'Czech'  [c00069]  :: The Idiot Returns is a 1999 Czech film directed by Saša Gedeon.
+      - 'Czech Republic'  [c00069]  :: It was the Czech Republic's submission to the 72nd Academy Awards for the Academy Award for Best Foreign Language Film, but was not accepted as a nominee.
+      - 'Czechoslovak'  [c00069]  :: (surface not located in chunk text)
+
+[4] (PERSON) canonical='Paul Methuen'  forms=3 chunks=2
+      - 'Paul Cobb Methuen'  [c01687]  :: Paul Cobb Methuen (15 June 1752 – 15 September 1816) was an English politician.
+      - 'Paul Methuen'  [c01686]  :: Paul Methuen (16 May 1723 – 22 January 1795) was an English politician.
+      - 'Sir Paul Methuen (1672–1757)'  [c01686]  :: He was the son of Thomas Methuen of Bradford-on-Avon and was the cousin and heir of politician-diplomat Sir Paul Methuen (1672–1757).
+
+[5] (PERSON) canonical='Princess Maria Amalia of Saxony'  forms=3 chunks=2
+      - 'Maria Amalia'  [c00707]  :: In 1738 he married Princess Maria Amalia of Saxony, daughter of Augustus III of Poland and an educated, cultured woman who gave birth to 13 children, eight of whom reached adulthood.
+      - 'Maria Amalia of Saxony'  [c00708]  :: Ferdinand was the third son of King Charles VII of Naples and V of Sicily by his wife, Maria Amalia of Saxony.
+      - 'Princess Maria Amalia of Saxony'  [c00707]  :: In 1738 he married Princess Maria Amalia of Saxony, daughter of Augustus III of Poland and an educated, cultured woman who gave birth to 13 children, eight of whom reached adulthood.
+
+[6] (AWARD) canonical='Academy Award'  forms=2 chunks=5
+      - 'Academy Award'  [c01137]  :: A five-time nominee of the Academy Award for Best Director and an enduring figure from the New Hollywood era, Altman was considered a "maverick" in making films with a highly naturalistic but stylized and satirical aesthetic, unlike most Ho
+      - 'Academy Awards'  [c01628]  :: Rohmer gained international acclaim around 1969 when his film "My Night at Maud's" was nominated at the Academy Awards.
+
+[7] (PERSON) canonical='Andronikos II Palaiologos'  forms=2 chunks=2
+      - 'Andronikos II'  [c00267]  :: Yolande of Montferrat (– 1317 in Constantinople) (also known as Violante, then Empress Irene) was the second wife of Andronikos II Palaiologos and thus empress of the Byzantine Empire.
+      - 'Andronikos II Palaiologos'  [c00262]  :: John Palaiologos (1286–1307) was a son of the Byzantine Emperor Andronikos II Palaiologos (reigned 1282–1328) and his second wife, Irene of Montferrat.
+
+[8] (PERSON) canonical='Antonio Carlos Jobim'  forms=2 chunks=2
+      - 'Antonio Carlos Jobim'  [c01802]  :: "Água de BeberWater To Drink") is a bossa nova jazz standard composed by Antonio Carlos Jobim and originally recorded in the key of A minor, with lyrics written by Vinicius de Moraes.
+      - 'Antônio Carlos Jobim'  [c01802]  :: (surface not located in chunk text)
+
+[9] (MISC) canonical='Australian'  forms=2 chunks=7
+      - 'Australia'  [c00780]  :: Nim's Island is a 2008 American- Australian adventure film written and directed by Jennifer Flackett and Mark Levin, and based on the children's story of the same name by Wendy Orr.
+      - 'Australian'  [c00780]  :: Nim's Island is a 2008 American- Australian adventure film written and directed by Jennifer Flackett and Mark Levin, and based on the children's story of the same name by Wendy Orr.
+
+[10] (MISC) canonical='Canada'  forms=2 chunks=5
+      - 'Canada'  [c01316]  :: (surface not located in chunk text)
+      - 'Canadian'  [c01316]  :: The Wanted 18 is a 2014 Canadian-Palestinian animated documentary about the efforts of Palestinians in Beit Sahour to start a small local dairy industry during the First Intifada, hiding a herd of 18 dairy cows from Israeli security forces 
+
+[11] (WORK) canonical='Danger Man (US: Secret Agent)'  forms=2 chunks=1
+      - 'Danger Man'  [c01747]  :: His career-defining roles were in the British television series "Danger Man" (US: "Secret Agent") and the surreal psychological drama "The Prisoner", which he co-created.
+      - 'Danger Man (US: Secret Agent)'  [c01747]  :: His career-defining roles were in the British television series "Danger Man" (US: "Secret Agent") and the surreal psychological drama "The Prisoner", which he co-created.
+
+[12] (PERSON) canonical='David Bisbal Ferre'  forms=2 chunks=2
+      - 'David Bisbal'  [c02318]  :: "Silencio" is the second single to be released from David Bisbal's 2006 studio album, "PremoniciónSilencio" tells the story of someone who feels hurt because his lover left him.
+      - 'David Bisbal Ferre'  [c02317]  :: David Bisbal Ferre (born in Almería, Spain on 5 June 1979) is a Spanish singer, songwriter, and actor.
+
+[13] (PERSON) canonical='Drusus Julius Caesar'  forms=2 chunks=1
+      - 'Drusus Caesar'  [c03315]  :: Following the model of her grandmother Livia, she spent the time following Germanicus' death supporting the cause of her sons Nero and Drusus Caesar.
+      - 'Drusus Julius Caesar'  [c03315]  :: Agrippina was vocal in claiming her husband was murdered to promote Tiberius' son Drusus Julius Caesar ("Drusus the Younger") as heir.
+
+[14] (PERSON) canonical='Dwight Hubbard Little'  forms=2 chunks=2
+      - 'Dwight H. Little'  [c01489]  :: Home by Spring is a 2018 romantic drama film directed by Dwight H.
+      - 'Dwight Hubbard Little'  [c01488]  :: Dwight Hubbard Little( born January 13, 1956 in Cleveland, Ohio) is an American film and television director, known for directing the films" Marked for DeathRapid FireMurder at 1600" and.
+
+[15] (MISC) canonical='Ealdorman'  forms=2 chunks=2
+      - 'Ealdorman'  [c00344]  :: Ordgar (died 971) was Ealdorman of Devon in England.
+      - 'ealdorman'  [c00344]  :: Ordgar (died 971) was Ealdorman of Devon in England.
+
+[16] (PERSON) canonical='Edward Fitzwilliam'  forms=2 chunks=2
+      - 'Edward Fitzwilliam'  [c02536]  :: Edward Fitzwilliam (1788–1852) was an actor of Irish descent and the husband of noted actress Fanny Fitzwilliam.
+      - 'Edward Francis Fitzwilliam'  [c02537]  :: Edward Francis Fitzwilliam (1824– 20 January 1857, aged 32) was an English composer and music director.
+
+[17] (PERSON) canonical='Elijah Eugene Cummings'  forms=2 chunks=2
+      - 'Elijah Cummings'  [c01670]  :: Rockeymore Cummings is a candidate in the 2020 Maryland 7th congressional district special election to fill out the term of her late husband, Elijah Cummings, and in the overlapping regular 2020 election for the same congressional seat.
+      - 'Elijah Eugene Cummings'  [c01672]  :: Elijah Eugene Cummings (January 18, 1951 – October 17, 2019) was an American politician and civil rights advocate who served in the United States House of Representatives for from 1996 until his death in 2019.
+
+[18] (PERSON) canonical='Elisabeth of Leuchtenberg'  forms=2 chunks=2
+      - 'Countess Elisabeth of Leuchtenberg'  [c01826]  :: Maria of Nassau-Dillenburg (1568-1625) was a daughter of Count John VI "the Elder" of Nassau-Dillenburg and his first wife, Countess Elisabeth of Leuchtenberg.
+      - 'Elisabeth of Leuchtenberg'  [c01828]  :: Elisabeth of Leuchtenberg (born: March 1537- died: 6 July 1579 in Dillenburg) was the daughter of Landgrave George III, Landgrave of Leuchtenberg and Margravine Barbara of Brandenburg-Ansbach.
+
+[19] (MISC) canonical='England'  forms=2 chunks=6
+      - 'England'  [c00344]  :: Ordgar (died 971) was Ealdorman of Devon in England.
+      - 'English'  [c00344]  :: (surface not located in chunk text)
+
+[20] (PERSON) canonical='Fanny Elizabeth Fitzwilliam'  forms=2 chunks=2
+      - 'Fanny Elizabeth Fitzwilliam'  [c02537]  :: Fitzwilliam, born at Deal, Kent on 2 August 1824, was the son of Edward Fitzwilliam, an actor, by his wife, Fanny Elizabeth Fitzwilliam, actress.
+      - 'Fanny Fitzwilliam'  [c02536]  :: Edward Fitzwilliam (1788–1852) was an actor of Irish descent and the husband of noted actress Fanny Fitzwilliam.
+
+[21] (PLACE) canonical='French'  forms=2 chunks=16
+      - 'France'  [c00402]  :: Rudolph Maté( 21 January 1898 – 27 October 1964), born Rudolf Mayer, was a Polish- Hungarian- American cinematographer, film director and film producer who worked as cameraman and cinematographer in Hungary, Austria, Germany, France and the
+      - 'French'  [c00402]  :: (surface not located in chunk text)
+
+[22] (PERSON) canonical='George Andrew Romero'  forms=2 chunks=2
+      - 'George A. Romero'  [c00430]  :: There's Always Vanilla( also known as" The Affair") is a 1971 romantic comedy film directed by George A.
+      - 'George Andrew Romero'  [c00431]  :: George Andrew Romero( February 4, 1940 – July 16, 2017) was an American filmmaker, writer, and editor.
+
+[23] (PERSON) canonical='Georgia Hart'  forms=2 chunks=2
+      - 'Georgia Hart'  [c01578]  :: Annis is married to Georgia Hart, the daughter of wrestler Stu and wrestling promoter Helen Hart.
+      - 'Georgia Hart of the Hart family'  [c01580]  :: He is the son of Georgia Hart of the Hart family and wrestler B.
+
+[24] (MISC) canonical='German'  forms=2 chunks=7
+      - 'German'  [c00402]  :: Rudolph Maté( 21 January 1898 – 27 October 1964), born Rudolf Mayer, was a Polish- Hungarian- American cinematographer, film director and film producer who worked as cameraman and cinematographer in Hungary, Austria, Germany, France and the
+      - 'Germany'  [c00402]  :: Rudolph Maté( 21 January 1898 – 27 October 1964), born Rudolf Mayer, was a Polish- Hungarian- American cinematographer, film director and film producer who worked as cameraman and cinematographer in Hungary, Austria, Germany, France and the
+
+[25] (PERSON) canonical='Gorm the Old'  forms=2 chunks=2
+      - 'Gorm the Old'  [c01325]  :: Gorm the Old , also called Gorm the Languid , was ruler of Denmark, reigning from to his death .
+      - 'King Gorm the Old'  [c01322]  :: He was the son of King Gorm the Old and of Thyra Dannebod.
+
+[26] (PLACE) canonical='Governor of New York'  forms=2 chunks=2
+      - 'Governor of New York'  [c00218]  :: William Henry Seward (May 16, 1801 – October 10, 1872) was United States Secretary of State from 1861 to 1869, and earlier served as governor of New York and United States Senator.
+      - 'governor of New York'  [c00218]  :: William Henry Seward (May 16, 1801 – October 10, 1872) was United States Secretary of State from 1861 to 1869, and earlier served as governor of New York and United States Senator.
+
+[27] (PERSON) canonical='Henrik Sureni Malyan'  forms=2 chunks=2
+      - 'Henrik Malyan'  [c02209]  :: A Piece of Sky is a 1980 Soviet comedy film directed by Henrik Malyan.
+      - 'Henrik Sureni Malyan'  [c02210]  :: Henrik Sureni Malyan (also transliterated Henrik Malian; September 30, 1925 – March 14, 1988) was an Armenian film director and writer.
+
+[28] (PERSON) canonical='His Highness the Father Amir Sheikh Hamad Bin Khalifa Al Thani'  forms=2 chunks=2
+      - 'His Highness the Father Amir Sheikh Hamad Bin Khalifa Al Thani'  [c01345]  :: Sheikha Hind bint Hamad Al-Thani of Qatar (born 15 August 1984) serves as Vice Chairperson and CEO of Qatar Foundation for Education, Science and Community Development (QF), a private non-profit organization founded in 1995 by His Highness 
+      - 'Sheikh Hamad bin Khalifa Al Thani'  [c01341]  :: Sheikha Moza bint Nasser, DBE (born in Al Khor, Qatar on January 15, 1959) is the consort of Sheikh Hamad bin Khalifa Al Thani, former Emir of the State of Qatar.
+
+[29] (PERSON) canonical='Isabella II'  forms=2 chunks=1
+      - 'Isabella II'  [c01712]  :: He was a brother of Ferdinand VII, as well as the uncle and father-in-law of Isabella II.
+      - 'Queen Isabella II'  [c01712]  :: Luisa Carlotta was instrumental in securing the succession for Ferdinand VII's daughter, Queen Isabella II.
+
+[30] (MISC) canonical='Italian'  forms=2 chunks=17
+      - 'Italian'  [c00015]  :: Alberto De Martino( 12 June 1929 – 2 June 2015) was an Italian film director and screenwriter.
+      - 'Italy'  [c00015]  :: (surface not located in chunk text)
+
+[31] (PERSON) canonical='James Colin Campbell'  forms=2 chunks=2
+      - 'Colin Campbell'  [c02661]  :: Thou Shalt Not Covet is a 1916 American silent drama film directed by Colin Campbell and starring Tyrone Power Sr.
+      - 'James Colin Campbell'  [c02657]  :: James Colin Campbell( 11 October 1859 – 26 August 1928) was a Scottish- born film director, actor and screenwriter.
+
+[32] (PERSON) canonical='Jesús Franco Manera'  forms=2 chunks=2
+      - 'Jesús Franco'  [c01738]  :: Lucky, the Inscrutable is a 1967 Spanish- Italian- German spy film directed by Jesús Franco and starring Ray Danton.
+      - 'Jesús Franco Manera'  [c01736]  :: Jesús Franco Manera( 12 May 1930 – 2 April 2013) was a Spanish filmmaker, composer, and actor, best known for his stylish exploitation films, directing around 160 feature films.
+
+[33] (PERSON) canonical='John Marcellus Huston'  forms=2 chunks=2
+      - 'John Huston'  [c02040]  :: It was produced by Eugene Frenke, directed by John Huston, and stars John Wayne, Sam Jaffe, and Japanese actress Eiko Ando.
+      - 'John Marcellus Huston'  [c02038]  :: John Marcellus Huston( August 5, 1906 – August 28, 1987) was an American film director, screenwriter, actor, and visual artist.
+
+[34] (PERSON) canonical='John Villiers Farrow'  forms=2 chunks=2
+      - 'John Farrow'  [c00850]  :: The Hitler Gang is a 1944 American pseudo- documentary film directed by John Farrow, which traces the political rise of Adolf Hitler.
+      - 'John Villiers Farrow'  [c00855]  :: John Villiers Farrow, KGCHS( 10 February 190427 January 1963) was an Australian- born American film director, producer and screenwriter.
+
+[35] (PERSON) canonical='Jorge Fons Pérez'  forms=2 chunks=2
+      - 'Jorge Fons'  [c01026]  :: The Bricklayers is a 1976 Mexican drama film directed by Jorge Fons.
+      - 'Jorge Fons Pérez'  [c01027]  :: Jorge Fons Pérez (born in Tuxpan, Veracruz, Mexico on April 23, 1939) is a Mexican film director.
+
+[36] (PERSON) canonical='José A( gustín) Ferreyra'  forms=2 chunks=2
+      - 'José A( gustín) Ferreyra'  [c02083]  :: José A( gustín) Ferreyra( 28 August 1889 – 29 January 1943), popularly known as" Negro Ferreyra"( Black Ferreyra, due to his mulato ethnicity), was an early Argentine film director, screenwriter and film producer.
+      - 'José A. Ferreyra'  [c02083]  :: José A( gustín) Ferreyra( 28 August 1889 – 29 January 1943), popularly known as" Negro Ferreyra"( Black Ferreyra, due to his mulato ethnicity), was an early Argentine film director, screenwriter and film producer.
+
+[37] (PERSON) canonical='King Clovis I'  forms=2 chunks=2
+      - 'Clovis I'  [c02872]  :: When Alaric II was killed fighting Clovis I, king of the Franks, in the Battle of Vouillé (507), his kingdom fell into disarray.
+      - 'King Clovis I'  [c02867]  :: Clotilde (or Chrodechildis) (500–531) was the daughter of King Clovis I of the Franks and Queen Clotilde and the queen of the Visigothic King Amalaric.
+
+[38] (PERSON) canonical='King Frederick I of Württemberg'  forms=2 chunks=2
+      - 'Frederick I'  [c01475]  :: Duke Louis of Württemberg ("Ludwig Friedrich Alexander") (Treptow an der Rega, 30 August 1756 – Kirchheim unter Teck, 20 September 1817) was the second son of Frederick II Eugene, Duke of Württemberg (1732–1797) and Margravine Sophia Doroth
+      - 'King Frederick I of Württemberg'  [c01469]  :: His father was Duke Louis of Württemberg, brother of King Frederick I of Württemberg and Empress Maria Feodorovna of Russia.
+
+[39] (PERSON) canonical='King Peter of Castile'  forms=2 chunks=2
+      - 'King Peter'  [c01482]  :: Blanche of Bourbon (1339–1361) was Queen of Castile as the wife of King Peter.
+      - 'King Peter of Castile'  [c00401]  :: Constance of York, Countess of Gloucester (– 28 November 1416) was the only daughter of Edmund of Langley, 1st Duke of York and his wife Isabella of Castile, daughter of King Peter of Castile and his favourite mistress, María de Padilla.
+
+[40] (PERSON) canonical='Lady Charlotte Esther Bernard'  forms=2 chunks=2
+      - 'Charlotte Bernard'  [c03302]  :: Doneraile was the son of Hayes St Leger, 2nd Viscount Doneraile and Charlotte Bernard.
+      - 'Lady Charlotte Esther Bernard'  [c03302]  :: He married Lady Charlotte Esther Bernard, daughter of Francis Bernard, 1st Earl of Bandon and Lady Catherine Henrietta Boyle, on 14 June 1816.
+
+[41] (WORK) canonical="Le Fils de l'épicier"  forms=2 chunks=1
+      - "Le Fils de l'épicier"  [c00688]  :: The Grocer's Son( French: Le fils de l'épicier) is a 2007 French dramatic film about a family that runs a grocery business in Provence, France; the business includes a single truck that travels the countryside making deliveries to customers
+      - "Le fils de l'épicier"  [c00688]  :: The Grocer's Son( French: Le fils de l'épicier) is a 2007 French dramatic film about a family that runs a grocery business in Provence, France; the business includes a single truck that travels the countryside making deliveries to customers
+
+[42] (PERSON) canonical='Lynn Hershman Leeson'  forms=2 chunks=2
+      - 'Lynn Hershman'  [c02750]  :: (1990) is a video documentary piece created by the artist Lynn Hershman (now known as Lynn Hershman Leeson).
+      - 'Lynn Hershman Leeson'  [c02750]  :: (1990) is a video documentary piece created by the artist Lynn Hershman (now known as Lynn Hershman Leeson).
+
+[43] (PERSON) canonical='Mario Mattòli'  forms=2 chunks=2
+      - 'Mario Mattoli'  [c00435]  :: Mario Mattòli( 30 November 1898 – 26 February 1980) was an Italian film director and screenwriter.
+      - 'Mario Mattòli'  [c00435]  :: Mario Mattòli( 30 November 1898 – 26 February 1980) was an Italian film director and screenwriter.
+
+[44] (PERSON) canonical='Martin Charles Scorsese'  forms=2 chunks=2
+      - 'Martin Charles Scorsese'  [c02085]  :: Martin Charles Scorsese( born November 17, 1942) is an American filmmaker and actor, whose career spans more than 50 years.
+      - 'Martin Scorsese'  [c02084]  :: Gangs of New York is a 2002 American epic period drama film directed by Martin Scorsese, set in the New York slums, and inspired by Herbert Asbury's non-fiction book," The Gangs of New York".
+
+[45] (WORK) canonical='Mon Pays'  forms=2 chunks=1
+      - 'Mon Pays'  [c00146]  :: Two of his songs are considered by many to be Quebec's unofficial anthems: "Mon pays" and "Gens du pays", and his line "Mon pays ce n'est pas un pays, c'est l'hiverMy country is not a country, it is winter", from "Mon Pays") became a prover
+      - 'Mon pays'  [c00146]  :: Two of his songs are considered by many to be Quebec's unofficial anthems: "Mon pays" and "Gens du pays", and his line "Mon pays ce n'est pas un pays, c'est l'hiverMy country is not a country, it is winter", from "Mon Pays") became a prover
+
+[46] (PERSON) canonical='Nancy Jane Meyers'  forms=2 chunks=2
+      - 'Nancy Jane Meyers'  [c02905]  :: Nancy Jane Meyers( born December 8, 1949) is an American film director, producer and screenwriter.
+      - 'Nancy Meyers'  [c02904]  :: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt.
+
+[47] (PERSON) canonical='Patrick Joseph McGoohan'  forms=2 chunks=2
+      - 'Patrick Joseph McGoohan'  [c01747]  :: Patrick Joseph McGoohan (19 March 1928 – 13 January 2009) was an Irish-American actor, screenwriter and director.
+      - 'Patrick McGoohan'  [c01748]  :: Rosenbloom, and directed by Patrick McGoohan.
+
+[48] (PERSON) canonical='Robert Bernard Altman'  forms=2 chunks=2
+      - 'Robert Altman'  [c01136]  :: Thieves Like Us is a 1974 American neo- noir crime road film directed by Robert Altman and starring Keith Carradine and Shelley Duvall.
+      - 'Robert Bernard Altman'  [c01137]  :: Robert Bernard Altman (February 20, 1925 – November 20, 2006) was an American film director, screenwriter, and producer.
+
+[49] (PERSON) canonical='Sheikha Moza bint Nasser'  forms=2 chunks=2
+      - 'Her Highness Sheikha Moza bint Nasser'  [c01345]  :: Sheikha Hind bint Hamad Al-Thani of Qatar (born 15 August 1984) serves as Vice Chairperson and CEO of Qatar Foundation for Education, Science and Community Development (QF), a private non-profit organization founded in 1995 by His Highness 
+      - 'Sheikha Moza bint Nasser'  [c01341]  :: Sheikha Moza bint Nasser, DBE (born in Al Khor, Qatar on January 15, 1959) is the consort of Sheikh Hamad bin Khalifa Al Thani, former Emir of the State of Qatar.
+
+[50] (PERSON) canonical='Sir Alan William Parker'  forms=2 chunks=2
+      - 'Alan Parker'  [c01732]  :: The Life of David Gale is a 2003 drama film directed by Alan Parker( in his final film as a director) and written by Charles Randolph.
+      - 'Sir Alan William Parker'  [c01733]  :: Sir Alan William Parker( born 14 February 1944) is an English filmmaker.
+
+[51] (PERSON) canonical='Soe Min Kodawgyi'  forms=2 chunks=2
+      - 'Princess Soe Min Kodawgyi'  [c03264]  :: It may have been a titular office created to suit his status as the husband of Princess Soe Min Kodawgyi, the daughter of the founder of the kingdom.
+      - 'Soe Min Kodawgyi'  [c03265]  :: Soe Min Kodawgyi was the chief queen consort of Sagaing from 1352 to 1364.
+
+[52] (PLACE) canonical='Spain'  forms=2 chunks=5
+      - 'Spain'  [c01712]  :: Infante Francisco de Paula of Spain (10 March 1794 – 13 August 1865) was an Infante of Spain and the youngest son of Charles IV of Spain and Maria Luisa of Parma.
+      - 'Spanish'  [c01712]  :: His education at the Spanish court was derailed by the Napoleonic intervention in Spain.
+
+[53] (PERSON) canonical='Stephen Hall (person)'  forms=2 chunks=1
+      - 'Stephen Hall'  [c00187]  :: Binney married Martha Hall in 1746 and they had a child Stephen Hall.
+      - 'Stephen Hall (person)'  [c00187]  :: Binney was buried, along with his two sons Stephen and Hibbert, in the Old Burying Ground (Halifax, Nova Scotia).
+
+[54] (PERSON) canonical='Takashi Shimizu'  forms=2 chunks=2
+      - 'Shimizu Takashi'  [c00231]  :: Takashi Shimizu( 清水 崇" Shimizu Takashi", born 27 July 1972) is a Japanese filmmaker.
+      - 'Takashi Shimizu'  [c00231]  :: Takashi Shimizu( 清水 崇" Shimizu Takashi", born 27 July 1972) is a Japanese filmmaker.
+
+[55] (PERSON) canonical='Thado Minbya'  forms=2 chunks=2
+      - 'King Thado Minbya of Ava'  [c03264]  :: Thado Hsinhtein (also known as Athinkhaya of Tagaung) was governor of Sagaing, and the father of King Thado Minbya of Ava.
+      - 'Thado Minbya'  [c03265]  :: She was the mother of Thado Minbya, the founder of the Kingdom of Ava (Inwa).
+
+[56] (WORK) canonical='Ung Flukt'  forms=2 chunks=1
+      - 'Ung Flukt'  [c02787]  :: She is known for films such as "Fjols til fjells" (1957), "Aldri annet enn bråk" (1954), and "Ung flukt" (1959).
+      - 'Ung flukt'  [c02787]  :: She is known for films such as "Fjols til fjells" (1957), "Aldri annet enn bråk" (1954), and "Ung flukt" (1959).
+
+[57] (PERSON) canonical='his father, Walter Huston'  forms=2 chunks=1
+      - 'his father, Walter Huston'  [c02038]  :: During his 46- year career, Huston received 15 Oscar nominations, winning twice, and directed both his father, Walter Huston, and daughter, Anjelica Huston, to Oscar wins.
+      - 'Walter Huston'  [c02038]  :: During his 46- year career, Huston received 15 Oscar nominations, winning twice, and directed both his father, Walter Huston, and daughter, Anjelica Huston, to Oscar wins.
+
