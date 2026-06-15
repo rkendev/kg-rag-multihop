@@ -164,6 +164,46 @@ rebuilt via `just build-graph`).
 **Do NOT start P3 in P2.** No query planner, question entity-linking, traversal, retrieval, RRF,
 generation, abstention, reranker, or P0-baseline comparison — all P3+.
 
+## P3 result — KG-RAG vs flat RAG (the thesis test)
+
+**Status:** P3 closed. **Thesis holds.** Full record in
+[`THESIS_RESULT.md`](THESIS_RESULT.md). The single thing changed vs P0 is retrieval: graph
+traversal over the P2 Kùzu graph is RRF-fused with the unchanged P0 hybrid retrieval; the
+**byte-identical** P0 generator + judge score the frozen 100-question test slice.
+
+| slice | n | token-F1 (P0→KG) | support recall@5 (P0→KG) |
+|---|---|---|---|
+| bridge | 14 | 7.2 → **19.4** (+12.2) | 75.0 → **89.3** (+14.3) |
+| compositional | 42 | 7.5 → **12.4** (+4.9) | 71.4 → **95.2** (+23.8) |
+| bridge_comparison (4-hop) | 23 | 21.7 → **43.5** (+21.7) | 55.4 → **71.7** (+16.3) |
+| comparison (single-hop guardrail) | 21 | 61.9 → **61.9** (+0.0) | 100.0 → 95.2 (−4.8) |
+| **overall** | 100 | 22.1 → **30.9** (+8.8) | 74.2 → **89.0** (+14.7) |
+
+**Headline:** overall multi-hop token-F1 **+8.8 pts** (22.1 → 30.9), recall@5 **+14.7**. Every
+multi-hop slice improved and each beat its P0 target; the single-hop guardrail held flat.
+Bonus: over-abstention on answerable questions 54.0% → 47.0%, no-knowledge abstention 97.5% →
+100%. 94/100 questions used the graph leg; 6 fell back to pure hybrid (the expected
+under-merged-bridge fallback). Mechanism confirmed by spot-check: the graph surfaces the
+second-hop bridging chunk (the bridge entity isn't named in the question, so vector/BM25
+can't rank it) — the recall gap P0 left open.
+
+**Pipeline (all deterministic except the single temp-0 generator pass, which runs once):**
+relation normalization → GLiNER entity extraction + alias/bge linking → bounded Kùzu
+traversal (both directions, depth ≤ 2, frontier budget) → RRF fusion with the P0 hybrid leg
+→ unchanged P0 generation → same judge/metrics.
+
+```bash
+just kgrag         # graph-fused retrieval + UNCHANGED P0 generator (resumable, one-time)
+just eval-kgrag    # score with the SAME judge/metrics; writes THESIS_RESULT.md
+just verify-kgrag  # deterministic recompute + fairness git-diff guardrail + spot-check
+```
+
+**Fairness guardrail:** `git diff` over the generator, prompt, judge, metrics, and frozen
+gold is empty (last touched in the P0 commit); `GEN_TOP_K=5`, `RRF_K=60` unchanged.
+**Caveat:** the graph overlay covers the 246 test-support chunks (P2 operator-approved scope),
+so the graph leg can only surface chunks within that overlay; growing it to the full corpus is
+future work. See `THESIS_RESULT.md`.
+
 ## License
 
 Code: see repository. Dataset (2WikiMultiHopQA) is Apache-2.0; its license is retained
