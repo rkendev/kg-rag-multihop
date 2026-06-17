@@ -37,6 +37,10 @@ EXTRACTION_PRED_PATH = EXTRACTION_DIR / "predictions.jsonl"  # FROZEN P1 gate ar
 EXTRACTION_PRED_POSTFIX_PATH = EXTRACTION_DIR / "predictions_gold_postfix.jsonl"
 # Graph-corpus extraction output (Step 1), written checkpointed/resumable per chunk.
 EXTRACTION_PRED_CORPUS_PATH = EXTRACTION_DIR / "predictions_corpus.jsonl"
+# Sidecar: every ATTEMPTED chunk_id (one per line), written regardless of triple count, so a
+# resume also skips chunks that legitimately yielded 0 triples (which never reach the
+# predictions file) instead of re-running them every restart. Resume = predictions ∪ sidecar.
+EXTRACTION_ATTEMPTED_IDS_PATH = EXTRACTION_DIR / "attempted_chunk_ids.txt"
 # Optional scope: if this file exists, the graph corpus is restricted to these chunk_ids (one
 # per line). v1 scopes to the 100 test questions' support chunks (full qwen run is ~84h; this
 # bounds it to an overnight run). The FAISS/vector index stays over the full corpus regardless.

@@ -48,7 +48,10 @@ COARSE = {
 LITERAL_RELATIONS = {"occupation", "genre", "cause of death"}
 
 # Particles dropped before comparing name content (kept in the surface/canonical display form).
-STOPWORDS = {"the", "of", "a", "an", "and", "de", "la", "le", "du", "des", "von", "van",
+# v2 micro-fix (WORK-article): the definite/indefinite articles "the"/"a"/"an" are NOT dropped —
+# they distinguish titles ("The Lump of Coal" the story vs "A Lump of Coal" the album; "The White
+# Fang" vs "White Fang"). Other particles (of/de/la/...) are still dropped.
+STOPWORDS = {"of", "and", "de", "la", "le", "du", "des", "von", "van",
              "der", "den", "di", "da", "del", "el"}
 # Titles/honorifics: their presence/absence must NOT distinguish two entities.
 HONORIFICS = {
@@ -58,8 +61,14 @@ HONORIFICS = {
     "sheikh", "sheikha", "emir", "amir", "his", "her", "highness", "majesty", "mr", "mrs", "ms",
 }
 # Kinship nouns: a surface like "Isabel's brother" denotes a DIFFERENT entity than "Isabel".
+# v2 defensibility fix (culprit b): the original set omitted parents/grandparents, and `\bdaughter\b`
+# does not match inside "granddaughter", so relational references like "granddaughter of Adib Kheir"
+# and "the mother of Harald Haakonsson" leaked through and fused with the named entity. The grand-
+# forms and mother/father/parent close that leak (each is matched as a whole \bword\b).
 RELATIONAL = {"brother", "sister", "wife", "husband", "son", "daughter", "cousin", "nephew",
-              "niece", "uncle", "aunt", "widow", "widower"}
+              "niece", "uncle", "aunt", "widow", "widower", "mother", "father", "parent",
+              "grandmother", "grandfather", "granddaughter", "grandson", "grandchild",
+              "grandparent"}
 # A trailing keyword that turns a name into a DIFFERENT entity ("Andy Warhol" vs the
 # "Andy Warhol Museum"); such an added token must block a name-subset merge.
 DISTINCT_SUFFIX = {"museum", "foundation", "award", "prize", "university", "college", "school",
@@ -85,6 +94,15 @@ def _numerals(tokens: list[str]) -> set[str]:
 
 def _content(tokens: list[str]) -> list[str]:
     return [t for t in tokens if t not in STOPWORDS]
+
+
+def _lead(content: list[str]) -> str:
+    """First non-honorific content token (the 'first name'). Genuine name variants share it;
+    a differing leading name denotes a different person — used to block patronymic set-collapse."""
+    for t in content:
+        if t not in HONORIFICS:
+            return t
+    return content[0] if content else ""
 
 
 def is_compound(surface: str) -> bool:
@@ -151,14 +169,30 @@ def merge_ok(ka: str, kb: str, btype: str) -> bool:
         return True
     sa, sb = set(ca), set(cb)
     if sa <= sb or sb <= sa:                       # one name is contained in the other
+        # v2 micro-fix (patronymic/honorific set-collapse): a set-subset loses word order, so
+        # "Hamad bin Khalifa Al Thani" wrongly matched inside "Sheikh Khalifa Bin Hamad Bin Khalifa
+        # Al Thani" (its set is a superset) and "St Leger" inside "Sir John St Leger". Real name
+        # variants share their leading (first) name; a different leading name => different person.
+        if _lead(ca) != _lead(cb):
+            return False
         extra = (sb - sa) if sa <= sb else (sa - sb)
         nonhon = extra - HONORIFICS
         if nonhon & DISTINCT_SUFFIX:              # "X" vs "X Museum/Foundation/..." -> distinct
             return False
         if not nonhon:                            # only honorifics/particles added
             return True
-        if btype == "PERSON" and len(nonhon) == 1:  # a single added middle name / epithet
-            return True
+        if btype == "PERSON" and len(nonhon) == 1:
+            # A single added content token merges ONLY when it is an INTERIOR middle name
+            # ("Robert Altman" ~ "Robert Bernard Altman"). v2 defensibility fix (culprit a): a
+            # token at the START or END is a DISTINGUISHING first-name/surname, not a middle name —
+            # "Robert Gordon" vs "Robert Gordon Pearson", "Hamad bin Khalifa Al Thani" vs "Jassim
+            # bin Hamad bin Khalifa Al Thani" are DIFFERENT people — so an edge addition must not
+            # merge (this also blocks the "<kin> of X" leading-token relational leaks). The cost is
+            # under-merging appended-second-surname same-person pairs (e.g. "Jesús Franco" / "Jesús
+            # Franco Manera"); that recall trade-off is measured by the connectivity report.
+            longer = cb if sa <= sb else ca
+            tok = next(iter(nonhon))
+            return bool(longer) and longer[0] != tok and longer[-1] != tok
         return False
     # tight typo / spacing catch for SHORT names only (avoid long-title near-collisions)
     if max(len(ta), len(tb)) <= 4:

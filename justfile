@@ -47,6 +47,10 @@ extract-postfix:
 extraction-eval-postfix:
     uv run python -m kgrag.eval.extraction_eval_postfix
 
+# Step 1a: regenerate the graph-corpus scope (gold=246 answer-only overlay | full=851 test-context union).
+graph-scope scope="full":
+    uv run python -m kgrag.graph.make_graph_scope --scope {{scope}} --write
+
 # Step 1: full-corpus extraction ONCE — resumable/checkpointed. Run as a quiet background job.
 extract-corpus:
     PYTHONUNBUFFERED=1 uv run python -u -m kgrag.graph.extract_corpus

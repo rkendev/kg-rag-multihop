@@ -1,0 +1,84 @@
+MERGE-PRECISION AUDIT — v2 (full test-context graph, 851 chunks)
+================================================================
+Two states recorded below: (I) SAME unchanged v1 rules; (II) after the two operator-authorized
+surgical fixes. Full evidence dumps regenerate via `uv run python -m kgrag.graph.audit_merges`.
+
+GATE: merge precision >= 0.90 (<= ~10% wrong). Over-merging is the unrecoverable failure.
+
+----------------------------------------------------------------
+(I) SAME v1 RULES  ->  140 merged clusters, 5425 entities
+    clear over-merges = 25/140  ->  precision = 0.821   GATE FAIL
+    (v1 gold-only graph was 53/57 = 0.930.)
+    Cause: 2WikiMultiHopQA distractor paragraphs (absent from the answer-enriched v1 overlay)
+    are deliberately full of same-name/same-family/same-dynasty entities. The gold-only v1
+    chunks happened to hold mostly distinct entities, masking this.
+
+(II) AFTER SURGICAL FIXES  ->  110 merged clusters, 5478 entities
+    Fix (a): the "single added token = middle name for PERSON" subset merge is now allowed ONLY
+             when the added token is INTERIOR (a true middle name, "Robert Altman" ~ "Robert
+             Bernard Altman"); a LEADING/TRAILING token is a distinguishing first-name/surname
+             and no longer merges ("Robert Gordon" vs "Robert Gordon Pearson").
+    Fix (b): relational guard extended (mother/father/parent/grand* added) so "granddaughter of
+             X" / "the mother of Y" no longer fuse with X/Y.
+    clear over-merges = 16/110  ->  precision = 94/110 = 0.855   STILL < 0.90 (GATE FAIL)
+    Improvement: 0.821 -> 0.855. Fixes removed the trailing/leading-token and relational chains
+    (Robert Gordon 8->3 forms, St Leger 10->5, Al Thani 12->7, granddaughter/mother-of leaks gone).
+
+REMAINING 16 CLEAR OVER-MERGES — from mechanisms OUTSIDE the two authorized culprits:
+  Honorific equivalence + patronymic set-collapse (set-based subset treats "Sir/Duke/Countess X"
+  == "X", and reordered patronymics "Hamad bin Khalifa" == "Khalifa bin Hamad" as equal sets):
+     [1] Al Thani (Hamad/Khalifa/Joaan/Mohammed), [11] Robert Gordon (+Sir), [19] Al Thani
+     (Abdullah/Hamad-bin-Abdullah), [32] Elisabeth of Leuchtenberg (+Countess), [37] Ernest I
+     (+Duke), [86] Colin Campbell vs Sir Colin Campbell, [3] St Leger (Sir-John/Sir-Anthony)
+  Interior single token that is actually DISTINGUISHING (the allowed-interior case backfires):
+     [8] Hibbert (Newton) Binney generations, [9] Paul (Cobb) Methuen, [27] Drusus (Julius) Caesar,
+     [30] Edward (Francis) Fitzwilliam father/son, [74] Pauline (Therese) of Württemberg
+  Stopword-article equivalence ("The X" / "A X" / "X" collapse):
+     [93] Duke of Castro (Carlo vs Ferdinand), [94] Lump of Coal (album vs story),
+     [95] White Fang (1946 film vs 1993 TV)
+  Garbled extraction artifact: [5] "d B's" (fuses BBC dramas / Bourbon dynasty / Brooklyn Dodgers)
+
+  (Plus ~6 borderline role-phrase/place artifacts not counted: [6] Byzantine, [33] Elizabeth,
+   [50] Inca, [72] Nassau-Dillenburg, [76] Prince of Anhalt-Dessau, [96] Two Sicilies.)
+
+----------------------------------------------------------------
+(III) AFTER 2 MORE OPERATOR-AUTHORIZED MICRO-FIXES (final round)  ->  103 clusters, 5493 entities
+    Fix (c) patronymic/honorific set-collapse: a set-subset loses word order, so "Hamad bin Khalifa"
+            matched inside "Khalifa bin Hamad ..." and "St Leger" inside "Sir John St Leger".
+            merge_ok now requires the same LEADING (non-honorific) content token ("first name").
+    Fix (d) WORK-article: "the"/"a"/"an" removed from STOPWORDS, so they distinguish titles
+            ("The Lump of Coal" vs "A Lump of Coal"; "The White Fang" vs "White Fang").
+    (Bonus: fix (c)'s leading-name guard also split the degenerate role-phrase merges — "emperor of
+     the Byzantine Empire", "prince of the Two Sicilies", "emperor of the Inca Empire" — that the
+     article kept as content; those are no longer fused.)
+
+    clear over-merges = 10/103  ->  precision = 93/103 = 0.903   >= 0.90  GATE PASSES (marginal)
+    (Al Thani family correctly split into per-person clusters [78]-[81]; St Leger -> single John St
+     Leger; Lump of Coal / White Fang / Duke of Castro split.)
+
+    THE 10 RESIDUAL OVER-MERGES = the irreducible STRING-ONLY CEILING (out of v1 scope to fix):
+      Interior single token that is a genuine middle name vs a distinguishing one — string matching
+      CANNOT disambiguate "John Marcellus Huston"=same from these=different:
+        [5] Hibbert (Newton) Binney, [7] Paul (Cobb) Methuen, [24] Drusus (Julius) Caesar,
+        [27] Edward (Francis) Fitzwilliam, [69] Pauline (Therese) of Württemberg
+      Same first+last name, different person, distinguished only by birth-year/title (honorific):
+        [9] Robert Gordon (musician/baronet/Wolrige), [29] Countess Elisabeth of Leuchtenberg
+        (1568 vs 1537), [34] Duke Ernest I (Saxe-Coburg vs Anhalt-Dessau), [84] (Sir) Colin Campbell
+      Garbled extraction artifact: [3] "d B's" (BBC dramas / Bourbon dynasty / Brooklyn Dodgers)
+      A proper fix needs embedding/attribute (birth-year) or LLM disambiguation — OUT of v1 scope.
+
+    Borderline NOT counted (degenerate place/role-phrase artifacts, not two distinct NAMED entities):
+      [30] Elizabeth/(first daughter), [67] Nassau-Dillenburg/(count of), [71] Anhalt-Dessau/(prince of)
+
+----------------------------------------------------------------
+PROGRESSION:  precision  0.821 (same rules) -> 0.855 (+fixes a,b) -> 0.903 (+fixes c,d)
+CONNECTIVITY (all rounds, vs v1):  bridge coverage 0.907 (v1 0.897) | chain recall 0.828 (v1 0.807)
+VERDICT: precision >= 0.90 AND connectivity held -> proceed to build + thesis re-eval.
+
+----------------------------------------------------------------
+CONNECTIVITY RE-CHECK (after the surgical fixes) — the under-merge risk did NOT materialize:
+    bridging entities (>=2 chunks/edges):              623   (v1: 254)
+    bridge-entity coverage (gold multi-hop test):  88/97 = 0.907   (v1: 0.897)  HELD / +1.0pt
+    chain-entity ER recall proxy:                 245/296 = 0.828   (v1: 0.807)  HELD / +2.1pt
+So precision tightening did not collapse multi-hop connectivity. The blocking issue is PRECISION
+(0.855 < 0.90), not recall.

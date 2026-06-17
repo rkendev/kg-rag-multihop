@@ -4,13 +4,13 @@
   "extract_model": "qwen2.5:7b-instruct",
   "resolve_fuzz_ratio": 92,
   "resolve_cosine": 0.9,
-  "entities": 2253,
+  "entities": 5493,
   "chunks": 3350,
   "sources": 3340,
-  "relates": 2481,
-  "mentioned_in": 2760,
+  "relates": 6292,
+  "mentioned_in": 7203,
   "faiss_vectors": 3350,
   "faiss_dim": 384,
-  "relates_edges": 2481,
-  "dropped_unresolved": 0
+  "relates_edges": 6292,
+  "dropped_unresolved": 4
 }

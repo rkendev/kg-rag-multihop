@@ -1,0 +1,428 @@
+MERGED CLUSTERS (>=2 surface forms): 103  | total entities: 5493
+========================================================================
+[1] (MISC) canonical='American'  forms=5 chunks=105
+      - 'American'  [c00015]  :: (surface not located in chunk text)
+      - 'U.S.'  [c00015]  :: (surface not located in chunk text)
+      - 'US'  [c00015]  :: (surface not located in chunk text)
+      - 'USA( American)'  [c00015]  :: (surface not located in chunk text)
+      - 'United States'  [c00015]  :: " The Telegraph" stated that his best known of these film was probably" The Antichrist The Antichrist" capitalized on the box- office appeal of" The Exorcist"( 1973) and in its first week in the United States earned a greater box office tha
+
+[2] (MISC) canonical='British'  forms=4 chunks=28
+      - 'Britain'  [c00031]  :: (surface not located in chunk text)
+      - 'British'  [c00031]  :: Ben Palmer is a British film and television director who is known for being the director of" Bo' Selecta" and" The Inbetweeners".
+      - 'UK'  [c00031]  :: (surface not located in chunk text)
+      - 'United Kingdom'  [c00031]  :: (surface not located in chunk text)
+
+[3] (ORG) canonical="d B's"  forms=4 chunks=4
+      - 'BBC dramas'  [c02874]  :: He often plays drama or comedy roles on television and frequently appears in BBC dramas.
+      - 'Bourbon dynasty'  [c00608]  :: His father, Jules de Polignac( 1780- 1847) was prime minister of Charles X until the Bourbon dynasty was overthrown( 1830).
+      - 'Brooklyn Dodgers'  [c00164]  :: ( August 28, 1913 – February 20, 1987) was an American football offensive lineman in the National Football League for the Brooklyn Dodgers and the Washington Redskins.
+      - "d B's"  [c01152]  :: Repercussion is the second studio album by American power pop band the d B's, released in 1982 by Albion Records.
+
+[4] (PLACE) canonical='Czech Republic'  forms=3 chunks=4
+      - 'Czech'  [c00069]  :: The Idiot Returns is a 1999 Czech film directed by Saša Gedeon.
+      - 'Czech Republic'  [c00069]  :: It was the Czech Republic's submission to the 72nd Academy Awards for the Academy Award for Best Foreign Language Film, but was not accepted as a nominee.
+      - 'Czechoslovak'  [c00069]  :: (surface not located in chunk text)
+
+[5] (PERSON) canonical='Hibbert Newton Binney'  forms=3 chunks=4
+      - 'Bishop Hibbert Binney'  [c00183]  :: Hibbert was the His grandfathers were Henry Newton (politician) and Bishop Hibbert Binney.
+      - 'Hibbert Binney'  [c00181]  :: Hibbert Binney( 12 August 1819 – 30 April 1887) was a Canadian Church of England bishop.
+      - 'Hibbert Newton Binney'  [c00181]  :: Born in Sydney, Nova Scotia, the grandson of Hibbert Newton Binney and the son of the Reverend Hibbert Binney and Henrietta Amelia Stout.
+
+[6] (PERSON) canonical='John St Leger'  forms=3 chunks=2
+      - 'John St Leger'  [c03304]  :: Sir John St Leger, Baron of the Court of Exchequer (Ireland), was his half-brother, the son of his father's second marriage to Aphra Harflete, an heiress from Ash in Kent.
+      - 'John St. Leger'  [c03304]  :: St Leger was the son of John St.
+      - 'Sir John St Leger'  [c03307]  :: Born in February 1731 at Grangemellon, County Kildare, Ireland, he was the fourth son of Sir John St Leger (1674–1743), who was a judge of the Court of Exchequer (Ireland), and his second wife Lavinia, daughter of Kingsmill Pennefather of C
+
+[7] (PERSON) canonical='Paul Methuen'  forms=3 chunks=2
+      - 'Paul Cobb Methuen'  [c01687]  :: Paul Cobb Methuen (15 June 1752 – 15 September 1816) was an English politician.
+      - 'Paul Methuen'  [c01686]  :: Paul Methuen (16 May 1723 – 22 January 1795) was an English politician.
+      - 'Sir Paul Methuen (1672–1757)'  [c01686]  :: He was the son of Thomas Methuen of Bradford-on-Avon and was the cousin and heir of politician-diplomat Sir Paul Methuen (1672–1757).
+
+[8] (PERSON) canonical='Prince "Alfonso"'  forms=3 chunks=2
+      - '"Prince" Alfonso"'  [c00537]  :: (surface not located in chunk text)
+      - 'Prince "Alfonso"'  [c00537]  :: Prince "Alfonso", Count of Caserta (28 March 1841 – 26 May 1934) was the third son of Ferdinand II of the Two Sicilies and Archduchess Maria Theresa of Austria.
+      - 'Prince" Alfonso"'  [c00537]  :: (surface not located in chunk text)
+
+[9] (PERSON) canonical='Sir Robert Gordon'  forms=3 chunks=5
+      - 'Robert Gordon'  [c02646]  :: Robert Gordon( born March 29, 1947) is an American musician and actor, best known as a neo-rockabilly singer.
+      - 'Robert Gordon Wolrige Gordon'  [c02641]  :: Brigadier- General Sir Robert Gordon Gilmour, 1st Baronet,( 27 February 1857 – 24 June 1939), born Robert Gordon Wolrige Gordon( he changed his name in 1887), was a British army officer and Captain of the Royal Company of Archers.
+      - 'Sir Robert Gordon'  [c02643]  :: Sir Robert Gordon, 3rd Baronet( 1647–1704) was a Scottish courtier and politician.
+
+[10] (ORG) canonical='The Bangles'  forms=3 chunks=7
+      - '"The Bangles"'  [c00697]  :: (surface not located in chunk text)
+      - 'The Bangles'  [c00697]  :: Kindred Spirit was a female duo consisting of Debbi Peterson( drummer/ vocalist of The Bangles) and Siobhan Maher( vocalist of the River City People).
+      - 'the Bangles'  [c00697]  :: Kindred Spirit was a female duo consisting of Debbi Peterson( drummer/ vocalist of The Bangles) and Siobhan Maher( vocalist of the River City People).
+
+[11] (WORK) canonical='"Go" (song)'  forms=2 chunks=1
+      - '"G.O." (song)'  [c02745]  :: (surface not located in chunk text)
+      - '"Go" (song)'  [c02745]  :: (surface not located in chunk text)
+
+[12] (WORK) canonical='"Meet the Browns"'  forms=2 chunks=2
+      - '"Meet the Browns"'  [c01531]  :: (surface not located in chunk text)
+      - 'Meet the Browns'  [c01531]  :: Rucker began his career on the daytime soap operas" As the World Turns" and" All My Children", before roles in Tyler Perry's films " Why Did I Get Married? Why Did I Get Married Too?", and" Meet the Browns", and its television adaptation.
+
+[13] (DATE) canonical='1981'  forms=2 chunks=11
+      - '"1981"'  [c00683]  :: (surface not located in chunk text)
+      - '1981'  [c00683]  :: Castle also co-wrote" Escape from New York"( 1981) with Carpenter.
+
+[14] (DATE) canonical='1988'  forms=2 chunks=7
+      - '"1988"'  [c00066]  :: (surface not located in chunk text)
+      - '1988'  [c00066]  :: Marsha Dietlein( born 1965) is an American actress best known for her role as Lucy Wilson in the 1988 zombie horror film" Return of the Living Dead Part II".
+
+[15] (DATE) canonical='1989'  forms=2 chunks=7
+      - '"1989"'  [c00207]  :: (surface not located in chunk text)
+      - '1989'  [c00207]  :: Etan Boritzer( born 1950) is an American writer of children ’s literature who is best known for his book" What is God?" first published in 1989.
+
+[16] (ORG) canonical='20th Century Fox'  forms=2 chunks=4
+      - '20th Century Fox'  [c00780]  :: It stars Abigail Breslin, Jodie Foster, and Gerard Butler, and was released on 4 April 2008 by 20th Century Fox.
+      - '20th Century- Fox'  [c00780]  :: It stars Abigail Breslin, Jodie Foster, and Gerard Butler, and was released on 4 April 2008 by 20th Century Fox.
+
+[17] (AWARD) canonical='Academy Award'  forms=2 chunks=9
+      - 'Academy Award'  [c00067]  :: He was nominated for an Academy Award in the category Best Art Direction for the film" Return of the Jedi".
+      - 'Academy Awards'  [c01135]  :: The film was nominated for four Academy Awards and five BAFTAs, recognizing Bonham Carter's performance, the screenplay, costume design and the cinematography.
+
+[18] (PERSON) canonical='Antonio Carlos Jobim'  forms=2 chunks=2
+      - 'Antonio Carlos Jobim'  [c01802]  :: "Água de BeberWater To Drink") is a bossa nova jazz standard composed by Antonio Carlos Jobim and originally recorded in the key of A minor, with lyrics written by Vinicius de Moraes.
+      - 'Antônio Carlos Jobim'  [c01802]  :: (surface not located in chunk text)
+
+[19] (ORG) canonical='Archives du Féminisme'  forms=2 chunks=1
+      - 'Archives du Féminisme'  [c01396]  :: Archives du Féminisme is a French non-profit organization established in 2000 whose main objective is to preserve feminist historical sources.
+      - 'Archives du féminisme'  [c01396]  :: Archives du Féminisme is a French non-profit organization established in 2000 whose main objective is to preserve feminist historical sources.
+
+[20] (MISC) canonical='Australian'  forms=2 chunks=14
+      - 'Australia'  [c00023]  :: Ian Barry is an Australian director of film and TV.
+      - 'Australian'  [c00023]  :: Ian Barry is an Australian director of film and TV.
+
+[21] (MISC) canonical='Canadian'  forms=2 chunks=13
+      - 'Canada'  [c00048]  :: (surface not located in chunk text)
+      - 'Canadian'  [c00048]  :: Lyon Cohen( 1868–1937) was a Polish- born Canadian businessman and a philanthropist.
+
+[22] (PLACE) canonical='China'  forms=2 chunks=3
+      - 'China'  [c01632]  :: (surface not located in chunk text)
+      - 'Chinese'  [c01632]  :: Hao Lei( born 1 November 1978) is a Chinese actress and singer, known for her starring roles in Lou Ye's films" Summer Palace"( 2006) and" Mystery"( 2012).
+
+[23] (WORK) canonical='Danger Man (US: Secret Agent)'  forms=2 chunks=1
+      - 'Danger Man'  [c01747]  :: His career-defining roles were in the British television series "Danger Man" (US: "Secret Agent") and the surreal psychological drama "The Prisoner", which he co-created.
+      - 'Danger Man (US: Secret Agent)'  [c01747]  :: His career-defining roles were in the British television series "Danger Man" (US: "Secret Agent") and the surreal psychological drama "The Prisoner", which he co-created.
+
+[24] (PERSON) canonical='Drusus Julius Caesar'  forms=2 chunks=1
+      - 'Drusus Caesar'  [c03315]  :: Following the model of her grandmother Livia, she spent the time following Germanicus' death supporting the cause of her sons Nero and Drusus Caesar.
+      - 'Drusus Julius Caesar'  [c03315]  :: Agrippina was vocal in claiming her husband was murdered to promote Tiberius' son Drusus Julius Caesar ("Drusus the Younger") as heir.
+
+[25] (PERSON) canonical='Dwight Hubbard Little'  forms=2 chunks=2
+      - 'Dwight H. Little'  [c01489]  :: Home by Spring is a 2018 romantic drama film directed by Dwight H.
+      - 'Dwight Hubbard Little'  [c01488]  :: Dwight Hubbard Little( born January 13, 1956 in Cleveland, Ohio) is an American film and television director, known for directing the films" Marked for DeathRapid FireMurder at 1600" and.
+
+[26] (MISC) canonical='Ealdorman'  forms=2 chunks=2
+      - 'Ealdorman'  [c00344]  :: Ordgar (died 971) was Ealdorman of Devon in England.
+      - 'ealdorman'  [c00344]  :: Ordgar (died 971) was Ealdorman of Devon in England.
+
+[27] (PERSON) canonical='Edward Fitzwilliam'  forms=2 chunks=3
+      - 'Edward Fitzwilliam'  [c02536]  :: Edward Fitzwilliam (1788–1852) was an actor of Irish descent and the husband of noted actress Fanny Fitzwilliam.
+      - 'Edward Francis Fitzwilliam'  [c02534]  :: The wife of Edward Francis Fitzwilliam, whom she married on 31 December 1853, was the eldest daughter of Thomas Acton Chaplin who died in November 1859.
+
+[28] (PERSON) canonical='Elijah Eugene Cummings'  forms=2 chunks=2
+      - 'Elijah Cummings'  [c01670]  :: Rockeymore Cummings is a candidate in the 2020 Maryland 7th congressional district special election to fill out the term of her late husband, Elijah Cummings, and in the overlapping regular 2020 election for the same congressional seat.
+      - 'Elijah Eugene Cummings'  [c01672]  :: Elijah Eugene Cummings (January 18, 1951 – October 17, 2019) was an American politician and civil rights advocate who served in the United States House of Representatives for from 1996 until his death in 2019.
+
+[29] (PERSON) canonical='Elisabeth of Leuchtenberg'  forms=2 chunks=2
+      - 'Countess Elisabeth of Leuchtenberg'  [c01826]  :: Maria of Nassau-Dillenburg (1568-1625) was a daughter of Count John VI "the Elder" of Nassau-Dillenburg and his first wife, Countess Elisabeth of Leuchtenberg.
+      - 'Elisabeth of Leuchtenberg'  [c01828]  :: Elisabeth of Leuchtenberg (born: March 1537- died: 6 July 1579 in Dillenburg) was the daughter of Landgrave George III, Landgrave of Leuchtenberg and Margravine Barbara of Brandenburg-Ansbach.
+
+[30] (PERSON) canonical='Elizabeth'  forms=2 chunks=2
+      - 'Elizabeth'  [c00789]  :: Lord Edmund Howard( – 19 March 1539) was the third son of Thomas Howard, 2nd Duke of Norfolk, and his first wife, Elizabeth Tilney.
+      - 'Elizabeth (first daughter)'  [c00789]  :: Lord Edmund Howard( – 19 March 1539) was the third son of Thomas Howard, 2nd Duke of Norfolk, and his first wife, Elizabeth Tilney.
+
+[31] (PERSON) canonical='Elizabeth Woodville'  forms=2 chunks=3
+      - 'Elizabeth Woodville'  [c00394]  :: George of York, 1st Duke of Bedford( March 1477 – March 1479) was the eighth child and third son of Edward IV of England and Elizabeth Woodville.
+      - 'Queen Elizabeth Woodville'  [c00396]  :: Bridget of York( 10 November 1480 – 1517) was an English princess, the tenth child and seventh daughter of Edward IV of England and Queen Elizabeth Woodville.
+
+[32] (MISC) canonical='Emir'  forms=2 chunks=2
+      - 'Emir'  [c00427]  :: The Akkari Ismailis of Salamiyah were forced off their land in the mid-19th century on the orders of the Ismaili" emir"( prince) of the city, who gave the land confiscated from them to his relatives.
+      - 'emir'  [c00427]  :: The Akkari Ismailis of Salamiyah were forced off their land in the mid-19th century on the orders of the Ismaili" emir"( prince) of the city, who gave the land confiscated from them to his relatives.
+
+[33] (MISC) canonical='English'  forms=2 chunks=26
+      - 'England'  [c00097]  :: (surface not located in chunk text)
+      - 'English'  [c00097]  :: Henry Walter Moore( 1849 – 20 August 1916) was an English- born first- class cricketer who spent most of his life in New Zealand.
+
+[34] (PERSON) canonical='Ernest I'  forms=2 chunks=2
+      - 'Duke Ernest I'  [c01470]  :: She was Duchess of Saxe-Coburg and Gotha from 1832 to 1844 as the second wife of Duke Ernest I.
+      - 'Ernest I'  [c01725]  :: Ernest I, Prince of Anhalt-Dessau (died Dessau, 12 June 1516), was a German prince of the House of Ascania and ruler of the principality of Anhalt-Dessau.
+
+[35] (PERSON) canonical='Fanny Elizabeth Fitzwilliam'  forms=2 chunks=2
+      - 'Fanny Elizabeth Fitzwilliam'  [c02537]  :: Fitzwilliam, born at Deal, Kent on 2 August 1824, was the son of Edward Fitzwilliam, an actor, by his wife, Fanny Elizabeth Fitzwilliam, actress.
+      - 'Fanny Fitzwilliam'  [c02536]  :: Edward Fitzwilliam (1788–1852) was an actor of Irish descent and the husband of noted actress Fanny Fitzwilliam.
+
+[36] (PERSON) canonical='Frances Adeline Seward'  forms=2 chunks=3
+      - 'Frances Adeline Miller Seward'  [c00221]  :: Frances Adeline Miller Seward (September 25, 1805 – June 21, 1865) was the First Lady of New York and the wife of William Henry Seward, a senator in the New York legislature, Governor of New York, a senator from New York and United States S
+      - 'Frances Adeline Seward'  [c00214]  :: Seward and Frances Adeline Seward.
+
+[37] (MISC) canonical='French'  forms=2 chunks=42
+      - 'France'  [c00013]  :: (surface not located in chunk text)
+      - 'French'  [c00013]  :: La Bestia humana is a 1957 Argentine film whose story is based on the novel" La Bête Humaine" by the French writer Émile Zola.
+
+[38] (PERSON) canonical='George Andrew Romero'  forms=2 chunks=2
+      - 'George A. Romero'  [c00430]  :: There's Always Vanilla( also known as" The Affair") is a 1971 romantic comedy film directed by George A.
+      - 'George Andrew Romero'  [c00431]  :: George Andrew Romero( February 4, 1940 – July 16, 2017) was an American filmmaker, writer, and editor.
+
+[39] (MISC) canonical='German'  forms=2 chunks=19
+      - 'German'  [c00105]  :: Astrid North( Astrid Karina North Radmann; 24 August 1973, Berlin – 25 June 2019, Berlin) was a German soul singer and songwriter.
+      - 'Germany'  [c00105]  :: (surface not located in chunk text)
+
+[40] (WORK) canonical='Go with Peace, Jamil'  forms=2 chunks=2
+      - 'Go With Peace, Jamil'  [c02746]  :: He received a Bodil Award nomination in the category Best Actor for the film" Go With Peace, Jamil" in 2008.
+      - 'Go with Peace, Jamil'  [c02746]  :: He received a Bodil Award nomination in the category Best Actor for the film" Go With Peace, Jamil" in 2008.
+
+[41] (PERSON) canonical='Gorm the Old'  forms=2 chunks=2
+      - 'Gorm the Old'  [c01325]  :: Gorm the Old , also called Gorm the Languid , was ruler of Denmark, reigning from to his death .
+      - 'King Gorm the Old'  [c01322]  :: He was the son of King Gorm the Old and of Thyra Dannebod.
+
+[42] (PLACE) canonical='Governor of New York'  forms=2 chunks=2
+      - 'Governor of New York'  [c00218]  :: William Henry Seward (May 16, 1801 – October 10, 1872) was United States Secretary of State from 1861 to 1869, and earlier served as governor of New York and United States Senator.
+      - 'governor of New York'  [c00218]  :: William Henry Seward (May 16, 1801 – October 10, 1872) was United States Secretary of State from 1861 to 1869, and earlier served as governor of New York and United States Senator.
+
+[43] (PERSON) canonical='Henrik Sureni Malyan'  forms=2 chunks=2
+      - 'Henrik Malyan'  [c02209]  :: A Piece of Sky is a 1980 Soviet comedy film directed by Henrik Malyan.
+      - 'Henrik Sureni Malyan'  [c02210]  :: Henrik Sureni Malyan (also transliterated Henrik Malian; September 30, 1925 – March 14, 1988) was an Armenian film director and writer.
+
+[44] (PERSON) canonical='Henry Newton'  forms=2 chunks=3
+      - 'Henry Newton'  [c00183]  :: He was the grandson of Henry Newton and the son of Jonathan Binney who was a signatory to one of the Halifax Treaties with the Mi'kmaq.
+      - 'Henry Newton (politician)'  [c00183]  :: Hibbert was the His grandfathers were Henry Newton (politician) and Bishop Hibbert Binney.
+
+[45] (WORK) canonical='In the Mirror of Maya Deren'  forms=2 chunks=1
+      - '"In the Mirror of Maya Deren"'  [c01674]  :: (surface not located in chunk text)
+      - 'In the Mirror of Maya Deren'  [c01674]  :: Filmworks X: In the Mirror of Maya Deren features a score for film by John Zorn.
+
+[46] (PERSON) canonical='Isabella II'  forms=2 chunks=1
+      - 'Isabella II'  [c01712]  :: He was a brother of Ferdinand VII, as well as the uncle and father-in-law of Isabella II.
+      - 'Queen Isabella II'  [c01712]  :: Luisa Carlotta was instrumental in securing the succession for Ferdinand VII's daughter, Queen Isabella II.
+
+[47] (MISC) canonical='Italian'  forms=2 chunks=26
+      - 'Italian'  [c00015]  :: Alberto De Martino( 12 June 1929 – 2 June 2015) was an Italian film director and screenwriter.
+      - 'Italy'  [c00015]  :: (surface not located in chunk text)
+
+[48] (PLACE) canonical='Japan'  forms=2 chunks=7
+      - 'Japan'  [c00231]  :: Takashi Shimizu( 清水 崇" Shimizu Takashi", born 27 July 1972) is a Japanese filmmaker.
+      - 'Japanese'  [c00231]  :: Takashi Shimizu( 清水 崇" Shimizu Takashi", born 27 July 1972) is a Japanese filmmaker.
+
+[49] (PERSON) canonical='John Marcellus Huston'  forms=2 chunks=4
+      - 'John Huston'  [c02037]  :: He twice collaborated with the director John Huston on the films" Heaven Knows, Mr.
+      - 'John Marcellus Huston'  [c02038]  :: John Marcellus Huston( August 5, 1906 – August 28, 1987) was an American film director, screenwriter, actor, and visual artist.
+
+[50] (PERSON) canonical='John Villiers Farrow'  forms=2 chunks=2
+      - 'John Farrow'  [c00850]  :: The Hitler Gang is a 1944 American pseudo- documentary film directed by John Farrow, which traces the political rise of Adolf Hitler.
+      - 'John Villiers Farrow'  [c00855]  :: John Villiers Farrow, KGCHS( 10 February 190427 January 1963) was an Australian- born American film director, producer and screenwriter.
+
+[51] (PERSON) canonical='José A( gustín) Ferreyra'  forms=2 chunks=2
+      - 'José A( gustín) Ferreyra'  [c02083]  :: José A( gustín) Ferreyra( 28 August 1889 – 29 January 1943), popularly known as" Negro Ferreyra"( Black Ferreyra, due to his mulato ethnicity), was an early Argentine film director, screenwriter and film producer.
+      - 'José A. Ferreyra'  [c02083]  :: José A( gustín) Ferreyra( 28 August 1889 – 29 January 1943), popularly known as" Negro Ferreyra"( Black Ferreyra, due to his mulato ethnicity), was an early Argentine film director, screenwriter and film producer.
+
+[52] (PERSON) canonical='Khalid al- Habib'  forms=2 chunks=1
+      - 'Khalid al- Habib'  [c00229]  :: Khalid al- Habib also believed to use the nom de guerre Khalid al Harbi is an Al- Qaeda leader who has overseen Al- Qaeda operations in Afghanistan.
+      - 'Khalid al Harbi'  [c00229]  :: Khalid al- Habib also believed to use the nom de guerre Khalid al Harbi is an Al- Qaeda leader who has overseen Al- Qaeda operations in Afghanistan.
+
+[53] (PERSON) canonical='King Clovis I'  forms=2 chunks=2
+      - 'Clovis I'  [c02872]  :: When Alaric II was killed fighting Clovis I, king of the Franks, in the Battle of Vouillé (507), his kingdom fell into disarray.
+      - 'King Clovis I'  [c02867]  :: Clotilde (or Chrodechildis) (500–531) was the daughter of King Clovis I of the Franks and Queen Clotilde and the queen of the Visigothic King Amalaric.
+
+[54] (PERSON) canonical='King Harald Bluetooth'  forms=2 chunks=3
+      - 'Harald Bluetooth'  [c01321]  :: Brice's Day massacre, along with his wife Gunhilde, daughter of Harald Bluetooth of Denmark and sister of Sweyn Forkbeard.
+      - 'King Harald Bluetooth'  [c01323]  :: His mother was Gunnhild Gormsdatter, the sister of King Harald Bluetooth.
+
+[55] (PERSON) canonical='King James II'  forms=2 chunks=2
+      - 'James II'  [c01944]  :: During the reign of James II he remained in private life, being, it is said, much disliked by the king, who expressly excepted him from pardon in the manifesto he issued when he contemplated landing in England (1692).
+      - 'King James II'  [c01481]  :: Blanche of Anjou( 1280 – 14 October 1310) was Queen of Aragon as the second spouse of King James II.
+
+[56] (PERSON) canonical='Kyle Gregory Wiltjer'  forms=2 chunks=2
+      - 'Kyle Gregory Wiltjer'  [c01600]  :: Kyle Gregory Wiltjer( born October 20, 1992) is a Canadian- American professional basketball player who plays for Türk Telekom of the Turkish Basketball Super League.
+      - 'Kyle Wiltjer'  [c01598]  :: Her half- brother Kyle Wiltjer played for the Houston Rockets of the NBA.
+
+[57] (PERSON) canonical='Lady Charlotte Esther Bernard'  forms=2 chunks=3
+      - 'Charlotte Bernard'  [c03302]  :: Doneraile was the son of Hayes St Leger, 2nd Viscount Doneraile and Charlotte Bernard.
+      - 'Lady Charlotte Esther Bernard'  [c03302]  :: He married Lady Charlotte Esther Bernard, daughter of Francis Bernard, 1st Earl of Bandon and Lady Catherine Henrietta Boyle, on 14 June 1816.
+
+[58] (PERSON) canonical='Lance R. Guest'  forms=2 chunks=2
+      - 'Lance Guest'  [c00680]  :: The film tells the story of Alex Rogan( Lance Guest), a teenager recruited by an alien defense force to fight in an interstellar war.
+      - 'Lance R. Guest'  [c00681]  :: Lance R.
+
+[59] (WORK) canonical="Le Fils de l'épicier"  forms=2 chunks=1
+      - "Le Fils de l'épicier"  [c00688]  :: The Grocer's Son( French: Le fils de l'épicier) is a 2007 French dramatic film about a family that runs a grocery business in Provence, France; the business includes a single truck that travels the countryside making deliveries to customers
+      - "Le fils de l'épicier"  [c00688]  :: The Grocer's Son( French: Le fils de l'épicier) is a 2007 French dramatic film about a family that runs a grocery business in Provence, France; the business includes a single truck that travels the countryside making deliveries to customers
+
+[60] (MISC) canonical='Love'  forms=2 chunks=2
+      - 'Love'  [c01486]  :: He has directed five feature films:" I Stand Alone"( 1998)," Irréversible"( 2002)," Enter the Void"( 2009)," Love"( 2015), and" Climax"( 2018).
+      - 'love'  [c01486]  :: He has directed five feature films:" I Stand Alone"( 1998)," Irréversible"( 2002)," Enter the Void"( 2009)," Love"( 2015), and" Climax"( 2018).
+
+[61] (PERSON) canonical='Mario Mattòli'  forms=2 chunks=2
+      - 'Mario Mattoli'  [c00435]  :: Mario Mattòli( 30 November 1898 – 26 February 1980) was an Italian film director and screenwriter.
+      - 'Mario Mattòli'  [c00435]  :: Mario Mattòli( 30 November 1898 – 26 February 1980) was an Italian film director and screenwriter.
+
+[62] (PERSON) canonical='Martin Charles Scorsese'  forms=2 chunks=2
+      - 'Martin Charles Scorsese'  [c02085]  :: Martin Charles Scorsese( born November 17, 1942) is an American filmmaker and actor, whose career spans more than 50 years.
+      - 'Martin Scorsese'  [c02084]  :: Gangs of New York is a 2002 American epic period drama film directed by Martin Scorsese, set in the New York slums, and inspired by Herbert Asbury's non-fiction book," The Gangs of New York".
+
+[63] (PERSON) canonical='María de la Esperanza'  forms=2 chunks=1
+      - 'María de la Esperanza'  [c00535]  :: Princess" María de la Esperanza" Amalia Raniera María Rosario Luisa Gonzaga of Bourbon- Two Sicilies( 14 June 1914, Madrid, Spain – 8 August 2005, Villamanrique de la Condesa, Spain) was the youngest daughter of Prince Carlos of Bourbon- Tw
+      - 'Maria Esperanza'  [c00535]  :: Maria Esperanza's husband Prince Pedro Gastão of Orléans- Braganza, was one of two claimants to the Brazilian throne, and head of the Petrópolis branch of the Brazilian Imperial House.
+
+[64] (PERSON) canonical='Melchior de Polignac'  forms=2 chunks=1
+      - 'Melchior Cardinal de Polignac'  [c00611]  :: Melchior Cardinal de Polignac( October 11, 1661 – November 20, 1742) was a French diplomat, Cardinal and neo-Latin poet.
+      - 'Melchior de Polignac'  [c00611]  :: Second son of Armand XVI, marquis de Polignac and Marquis Chalancon, Governor of Puy; and Jacqueline de Beauvoir- Grimoard- de Roure( his third wife), Melchior de Polignac was born at Chateau de la Ronte, near Puy en Vélay, Lavoûte- sur- Lo
+
+[65] (WORK) canonical='Mon Pays'  forms=2 chunks=1
+      - 'Mon Pays'  [c00146]  :: Two of his songs are considered by many to be Quebec's unofficial anthems: "Mon pays" and "Gens du pays", and his line "Mon pays ce n'est pas un pays, c'est l'hiverMy country is not a country, it is winter", from "Mon Pays") became a prover
+      - 'Mon pays'  [c00146]  :: Two of his songs are considered by many to be Quebec's unofficial anthems: "Mon pays" and "Gens du pays", and his line "Mon pays ce n'est pas un pays, c'est l'hiverMy country is not a country, it is winter", from "Mon Pays") became a prover
+
+[66] (PERSON) canonical='Nancy Jane Meyers'  forms=2 chunks=2
+      - 'Nancy Jane Meyers'  [c02905]  :: Nancy Jane Meyers( born December 8, 1949) is an American film director, producer and screenwriter.
+      - 'Nancy Meyers'  [c02904]  :: What Women Want is a 2000 American romantic fantasy comedy film written by Josh Goldsmith, Cathy Yuspa, and Diane Drake, directed by Nancy Meyers, and starring Mel Gibson and Helen Hunt.
+
+[67] (PLACE) canonical='Nassau- Dillenburg'  forms=2 chunks=2
+      - 'count of Nassau- Dillenburg'  [c01827]  :: William I, Count of Nassau- Dillenburg( nicknamed" William the Rich",; 10 April 1487 – 6 October 1559) was a count of Nassau- Dillenburg from the House of Nassau.
+      - 'Nassau- Dillenburg'  [c01827]  :: William I, Count of Nassau- Dillenburg( nicknamed" William the Rich",; 10 April 1487 – 6 October 1559) was a count of Nassau- Dillenburg from the House of Nassau.
+
+[68] (PERSON) canonical='Patrick Joseph McGoohan'  forms=2 chunks=2
+      - 'Patrick Joseph McGoohan'  [c01747]  :: Patrick Joseph McGoohan (19 March 1928 – 13 January 2009) was an Irish-American actor, screenwriter and director.
+      - 'Patrick McGoohan'  [c01748]  :: Rosenbloom, and directed by Patrick McGoohan.
+
+[69] (PERSON) canonical='Pauline of Württemberg'  forms=2 chunks=2
+      - 'Pauline of Württemberg'  [c01471]  :: Pauline of Württemberg (4 September 1800 – 10 March 1873) was a daughter of Duke Louis of Württemberg and Princess Henriette of Nassau-Weilburg.
+      - 'Pauline Therese of Württemberg'  [c01468]  :: Princess Catherine Frederica Charlotte of Württemberg (Stuttgart, 24 August 1821 – Stuttgart, 6 December 1898) was a daughter of William I of Württemberg and Pauline Therese of Württemberg.
+
+[70] (PERSON) canonical='Prince'  forms=2 chunks=3
+      - 'Prince'  [c00427]  :: The Akkari Ismailis of Salamiyah were forced off their land in the mid-19th century on the orders of the Ismaili" emir"( prince) of the city, who gave the land confiscated from them to his relatives.
+      - 'prince'  [c00427]  :: The Akkari Ismailis of Salamiyah were forced off their land in the mid-19th century on the orders of the Ismaili" emir"( prince) of the city, who gave the land confiscated from them to his relatives.
+
+[71] (PLACE) canonical='Prince of Anhalt- Dessau'  forms=2 chunks=2
+      - 'Anhalt- Dessau'  [c01730]  :: Waldemar IV, Prince of Anhalt- Dessau( died aft.
+      - 'Prince of Anhalt- Dessau'  [c01724]  :: Albert V, Prince of Anhalt- Dessau( died ca.
+
+[72] (PERSON) canonical='Princess Maria Amalia of Saxony'  forms=2 chunks=2
+      - 'Maria Amalia of Saxony'  [c00708]  :: Ferdinand was the third son of King Charles VII of Naples and V of Sicily by his wife, Maria Amalia of Saxony.
+      - 'Princess Maria Amalia of Saxony'  [c00707]  :: In 1738 he married Princess Maria Amalia of Saxony, daughter of Augustus III of Poland and an educated, cultured woman who gave birth to 13 children, eight of whom reached adulthood.
+
+[73] (PERSON) canonical='Princess Maria Mercedes of Bourbon- Two Sicilies'  forms=2 chunks=2
+      - 'Princess María de las Mercedes of Bourbon- Two Sicilies'  [c00536]  :: She was also an aunt of Juan Carlos I of Spain, son of her sister Princess María de las Mercedes of Bourbon- Two Sicilies.
+      - 'Princess Maria Mercedes of Bourbon- Two Sicilies'  [c00535]  :: Maria Esperanza was also an aunt of Juan Carlos I of Spain, son of her sister Princess Maria Mercedes of Bourbon- Two Sicilies.
+
+[74] (WORK) canonical='Prison sans barreaux'  forms=2 chunks=2
+      - 'Prison sans Barreaux'  [c01129]  :: Prison sans barreaux is a 1938 French film directed by Léonide Moguy.
+      - 'Prison sans barreaux'  [c01129]  :: Prison sans barreaux is a 1938 French film directed by Léonide Moguy.
+
+[75] (PERSON) canonical='Robert Bernard Altman'  forms=2 chunks=3
+      - 'Robert Altman'  [c01136]  :: Thieves Like Us is a 1974 American neo- noir crime road film directed by Robert Altman and starring Keith Carradine and Shelley Duvall.
+      - 'Robert Bernard Altman'  [c01137]  :: Robert Bernard Altman (February 20, 1925 – November 20, 2006) was an American film director, screenwriter, and producer.
+
+[76] (PLACE) canonical='Russia'  forms=2 chunks=3
+      - 'Russia'  [c00517]  :: Catherine I( born, later known as Marta Samuilovna Skavronskaya; –) was the second wife of Peter the Great and Empress of Russia from 1725 until her death.
+      - 'Russian'  [c00517]  :: (surface not located in chunk text)
+
+[77] (MISC) canonical='Scottish nobleman'  forms=2 chunks=3
+      - 'Scottish nobleman'  [c01942]  :: James Graham, 2nd Marquess of Montrose( – February 1669) was a Scottish nobleman and judge, surnamed the" Good" Marquess.
+      - 'Scottish noblewoman'  [c02288]  :: Mathilda Campbell, Duchess of Argyll( née Mathilda Coster Mortimer; 20 August 1925 — 5 June 1997) was a Scottish noblewoman.
+
+[78] (PERSON) canonical='Sheikh Hamad bin Khalifa Al Thani'  forms=2 chunks=7
+      - 'Hamad bin Khalifa Al Thani'  [c01338]  :: Shaikh Saud bin Abdelaziz bin Hamad bin Abdullah bin Jassim bin Muhammed Al Thani( 1949 in Qatar) He is the cousin of Qatari ruler Hamad bin Khalifa Al Thani, grandson of Hamad bin Abdullah Al Thani and great- grandson of Abdullah bin Jassi
+      - 'Sheikh Hamad bin Khalifa Al Thani'  [c01339]  :: He is the third son of the former Emir of Qatar, Sheikh Hamad bin Khalifa Al Thani, and the first child of the Emir with his second wife, Sheikha Moza bint Nasser Al Missned.
+
+[79] (PERSON) canonical='Sheikh Joaan bin Hamad bin Khalifa Al- Thani'  forms=2 chunks=2
+      - 'Joaan bin Hamad bin Khalifa Al Thani'  [c01347]  :: Other notable siblings of Al-Thani include the Deputy Emir of Qatar and Chairman of the Qatar Investment Authority, Abdullah bin Hamad bin Khalifa Al Thani, Chairman of the 2022 FIFA World Cup, Mohammed bin Hamad bin Khalifa Al Thani, Presi
+      - 'Sheikh Joaan bin Hamad bin Khalifa Al- Thani'  [c01344]  :: Sheikh Joaan bin Hamad bin Khalifa Al- Thani( born 23 July 1986) is a close member of Royal House of Thani.
+
+[80] (PERSON) canonical='Sheikh Mohammed bin Hamad bin Khalifa Al Thani'  forms=2 chunks=2
+      - 'Mohammed bin Hamad bin Khalifa Al Thani'  [c01347]  :: Other notable siblings of Al-Thani include the Deputy Emir of Qatar and Chairman of the Qatar Investment Authority, Abdullah bin Hamad bin Khalifa Al Thani, Chairman of the 2022 FIFA World Cup, Mohammed bin Hamad bin Khalifa Al Thani, Presi
+      - 'Sheikh Mohammed bin Hamad bin Khalifa Al Thani'  [c01342]  :: Sheikh Mohammed bin Hamad bin Khalifa Al Thani( born 18 April 1988) is a member of the Royal House of Thani.
+
+[81] (PERSON) canonical='Sheikh Tamim bin Hamad Al Thani'  forms=2 chunks=3
+      - 'Sheikh Tamim bin Hamad Al Thani'  [c01340]  :: He is the son of the 7th and former Emir, Sheikh Hamad bin Khalifa Al Thani, and a younger half- brother of the 8th and current Emir, Sheikh Tamim bin Hamad Al Thani.
+      - 'Tamim bin Hamad Al Thani'  [c01347]  :: Sheikh Thani bin Hamad bin Khalifa Al-Thani is the brother of the Emir of Qatar Tamim bin Hamad Al Thani, and son of the country's Father Emir Hamad bin Khalifa Al Thani.
+
+[82] (PERSON) canonical='Sheikha Moza bint Nasser'  forms=2 chunks=3
+      - 'Her Highness Sheikha Moza bint Nasser'  [c01345]  :: Sheikha Hind bint Hamad Al-Thani of Qatar (born 15 August 1984) serves as Vice Chairperson and CEO of Qatar Foundation for Education, Science and Community Development (QF), a private non-profit organization founded in 1995 by His Highness 
+      - 'Sheikha Moza bint Nasser'  [c01341]  :: Sheikha Moza bint Nasser, DBE (born in Al Khor, Qatar on January 15, 1959) is the consort of Sheikh Hamad bin Khalifa Al Thani, former Emir of the State of Qatar.
+
+[83] (PERSON) canonical='Sir Alan William Parker'  forms=2 chunks=2
+      - 'Alan Parker'  [c01732]  :: The Life of David Gale is a 2003 drama film directed by Alan Parker( in his final film as a director) and written by Charles Randolph.
+      - 'Sir Alan William Parker'  [c01733]  :: Sir Alan William Parker( born 14 February 1944) is an English filmmaker.
+
+[84] (PERSON) canonical='Sir Colin Campbell'  forms=2 chunks=2
+      - 'Colin Campbell'  [c02661]  :: Thou Shalt Not Covet is a 1916 American silent drama film directed by Colin Campbell and starring Tyrone Power Sr.
+      - 'Sir Colin Campbell'  [c02869]  :: Norton was also a Captain of 52nd Light Infantry; son-in- law of Sir Colin Campbell; brother- in- law of writer Caroline Norton
+
+[85] (PERSON) canonical='Soe Min Kodawgyi'  forms=2 chunks=2
+      - 'Princess Soe Min Kodawgyi'  [c03264]  :: It may have been a titular office created to suit his status as the husband of Princess Soe Min Kodawgyi, the daughter of the founder of the kingdom.
+      - 'Soe Min Kodawgyi'  [c03265]  :: Soe Min Kodawgyi was the chief queen consort of Sagaing from 1352 to 1364.
+
+[86] (PLACE) canonical='Spain'  forms=2 chunks=11
+      - 'Spain'  [c00440]  :: (surface not located in chunk text)
+      - 'Spanish'  [c00440]  :: 1510 – April 1, 1580) was a Spanish composer of the Renaissance, and also played the vihuela, a guitar- shaped string instrument.
+
+[87] (PLACE) canonical='St Albans'  forms=2 chunks=2
+      - 'St Albans'  [c01603]  :: Christopher Thomas Russell( born 1943, St.
+      - 'St. Albans'  [c01603]  :: Christopher Thomas Russell( born 1943, St.
+
+[88] (PERSON) canonical='Stephen Hall (person)'  forms=2 chunks=1
+      - 'Stephen Hall'  [c00187]  :: Binney married Martha Hall in 1746 and they had a child Stephen Hall.
+      - 'Stephen Hall (person)'  [c00187]  :: Binney was buried, along with his two sons Stephen and Hibbert, in the Old Burying Ground (Halifax, Nova Scotia).
+
+[89] (PERSON) canonical='Susanna Lee Hoffs'  forms=2 chunks=2
+      - 'Susanna Hoffs'  [c00706]  :: The band's classic line- up consisted of founding members Susanna Hoffs( vocals and rhythm guitar), Debbi Peterson( drums and vocals) and Vicki Peterson( lead guitar and vocals), together with Michael Steele( bass and vocals).
+      - 'Susanna Lee Hoffs'  [c00701]  :: Susanna Lee Hoffs( born January 17, 1959) is an American vocalist, guitarist, actress and songwriter.
+
+[90] (PERSON) canonical='Takashi Shimizu'  forms=2 chunks=2
+      - 'Shimizu Takashi'  [c00231]  :: Takashi Shimizu( 清水 崇" Shimizu Takashi", born 27 July 1972) is a Japanese filmmaker.
+      - 'Takashi Shimizu'  [c00231]  :: Takashi Shimizu( 清水 崇" Shimizu Takashi", born 27 July 1972) is a Japanese filmmaker.
+
+[91] (WORK) canonical='Ung Flukt'  forms=2 chunks=1
+      - 'Ung Flukt'  [c02787]  :: She is known for films such as "Fjols til fjells" (1957), "Aldri annet enn bråk" (1954), and "Ung flukt" (1959).
+      - 'Ung flukt'  [c02787]  :: She is known for films such as "Fjols til fjells" (1957), "Aldri annet enn bråk" (1954), and "Ung flukt" (1959).
+
+[92] (ORG) canonical='United Nations (Geneva)'  forms=2 chunks=2
+      - 'United Nations'  [c00147]  :: Pak Song -il is the ambassador for American affairs at North Korea's delegation to the United Nations.
+      - 'United Nations (Geneva)'  [c00147]  :: Pak Song -il is the ambassador for American affairs at North Korea's delegation to the United Nations.
+
+[93] (WORK) canonical='What Women Want'  forms=2 chunks=7
+      - '"What Women Want"'  [c02899]  :: (surface not located in chunk text)
+      - 'What Women Want'  [c02899]  :: She lives in Los Angeles and is best known for the films" Only You" and" What Women Want".
+
+[94] (WORK) canonical='Why Did I Get Married?'  forms=2 chunks=4
+      - '"Why Did I Get Married?"'  [c01533]  :: (surface not located in chunk text)
+      - 'Why Did I Get Married?'  [c01533]  :: Jones is best known for his portrayals of Laveinio in the dramatic film" The Wood"( 1999) and Mike of the dramatic films" Why Did I Get Married?"( 2007) and" Why Did I Get Married Too?"( 2010).
+
+[95] (PERSON) canonical='William Henry Seward'  forms=2 chunks=4
+      - 'William H. Seward'  [c00214]  :: Augustus Henry Seward( October 1, 1826 – September 11, 1876) was the son of William H.
+      - 'William Henry Seward'  [c00218]  :: William Henry Seward (May 16, 1801 – October 10, 1872) was United States Secretary of State from 1861 to 1869, and earlier served as governor of New York and United States Senator.
+
+[96] (MISC) canonical='director'  forms=2 chunks=32
+      - 'Director'  [c00015]  :: Alberto De Martino( 12 June 1929 – 2 June 2015) was an Italian film director and screenwriter.
+      - 'director'  [c00015]  :: Alberto De Martino( 12 June 1929 – 2 June 2015) was an Italian film director and screenwriter.
+
+[97] (MISC) canonical='documentary filmmaker'  forms=2 chunks=3
+      - 'documentary film- maker'  [c03299]  :: Paul Rotha( 3 June 1907 – 7 March 1984) was a British documentary film- maker, film historian and critic.
+      - 'documentary filmmaker'  [c00429]  :: Mohsen Eslamzadeh is an Iranian documentary filmmaker.
+
+[98] (MISC) canonical='film producer'  forms=2 chunks=7
+      - 'Film Producer'  [c00402]  :: Rudolph Maté( 21 January 1898 – 27 October 1964), born Rudolf Mayer, was a Polish- Hungarian- American cinematographer, film director and film producer who worked as cameraman and cinematographer in Hungary, Austria, Germany, France and the
+      - 'film producer'  [c00402]  :: Rudolph Maté( 21 January 1898 – 27 October 1964), born Rudolf Mayer, was a Polish- Hungarian- American cinematographer, film director and film producer who worked as cameraman and cinematographer in Hungary, Austria, Germany, France and the
+
+[99] (MISC) canonical='general'  forms=2 chunks=3
+      - 'General'  [c00165]  :: Zhao Shoushan( 12 November 1894 – 20 June 1965) was a KMT general and later Chinese Communist Party politician.
+      - 'general'  [c00165]  :: Zhao Shoushan( 12 November 1894 – 20 June 1965) was a KMT general and later Chinese Communist Party politician.
+
+[100] (MISC) canonical='judge'  forms=2 chunks=3
+      - 'Judge'  [c00187]  :: Jonathan Binney (January 7, 1723 – October 8, 1807) was a merchant, judge and political figure in Nova Scotia.
+      - 'judge'  [c00187]  :: Jonathan Binney (January 7, 1723 – October 8, 1807) was a merchant, judge and political figure in Nova Scotia.
+
+[101] (MISC) canonical='left- back'  forms=2 chunks=2
+      - 'left back'  [c01115]  :: John Breckin( born 27 July 1953) is an English former professional footballer who played as a left- back.
+      - 'left- back'  [c01115]  :: John Breckin( born 27 July 1953) is an English former professional footballer who played as a left- back.
+
+[102] (WORK) canonical='movie'  forms=2 chunks=2
+      - 'Movie'  [c00032]  :: Elliot Silverstein( born August 3, 1927, in Boston, Massachusetts) is an American director, who is best known for being the director of the movie" Cat Ballou"( 1965).
+      - 'movie'  [c00032]  :: Elliot Silverstein( born August 3, 1927, in Boston, Massachusetts) is an American director, who is best known for being the director of the movie" Cat Ballou"( 1965).
+
+[103] (LITERAL) canonical='singer, songwriter'  forms=2 chunks=2
+      - 'singer, songwriter'  [c00505]  :: Maximillian Albert George( born 6 September 1988) is an English singer, songwriter and actor from Manchester, England, known for being a former member of boy band, The Wanted.
+      - 'singer- songwriter'  [c00505]  :: (surface not located in chunk text)
+

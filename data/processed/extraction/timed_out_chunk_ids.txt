@@ -1,0 +1,1 @@
+c03234	ReadTimeout	HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=600)
