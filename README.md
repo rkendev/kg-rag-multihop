@@ -1,5 +1,8 @@
 # kg-rag-multihop
 
+**Live results explorer: https://rkendev.github.io/kg-rag-multihop/** — browse all 100 test
+questions and compare flat RAG vs KG-RAG side by side (pre-computed, no backend).
+
 Knowledge-Graph RAG for multi-hop question answering, evaluated on
 [2WikiMultiHopQA](https://github.com/Alab-NII/2wikimultihop) (Apache-2.0).
 
