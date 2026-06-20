@@ -124,6 +124,9 @@
     paragraphs that support the gold answers. Rebuilt over the <em>realistic</em> context pool
     (the same gold paragraphs <em>plus</em> their distractors, 851 chunks), the win largely collapses.
   </p>
+  <p class="note">
+    Higher token-F1 / EM = better answers; recall@5 = whether we fetched the right supporting evidence.
+  </p>
 
   <div class="bigstat" id="bigstat">&nbsp;</div>
 
@@ -152,7 +155,7 @@
         <td>61.9 <span class="delta">+0.0</span></td>
         <td class="loss">57.1 <span class="delta">−4.8</span></td></tr>
     </tbody>
-    <caption>Recall@5 (retrieval) still improves on the realistic graph; token-F1 / EM (answer quality) fall back to flat.</caption>
+    <caption>Recall@5 (retrieval) still improves on the realistic graph; token-F1 / EM (answer quality) fall back to flat. Deltas are computed from unrounded scores.</caption>
   </table>
 
   <h2>Per multi-hop slice — token-F1</h2>
@@ -174,7 +177,7 @@
         <td class="win">31.5 <span class="delta">+9.8</span></td>
         <td class="win">+12.0</td></tr>
     </tbody>
-    <caption>Every multi-hop F1 delta shrank from v1 to v2; <code>compositional</code> (the largest slice) flipped negative even as its recall@5 rose.</caption>
+    <caption>Every multi-hop F1 delta shrank from v1 to v2; <code>compositional</code> (the largest slice) flipped negative even as its recall@5 rose. Deltas are computed from unrounded scores.</caption>
   </table>
 
   <h2>A second finding — entity resolution</h2>

@@ -83,6 +83,8 @@ Per multi-hop slice (token-F1, Δ vs P0):
 | compositional | 42 | 7.5 | +4.9 | **−5.1** | +23.8 | +10.7 |
 | bridge_comparison | 23 | 21.7 | +21.7 | **+9.8** | +16.3 | +12.0 |
 
+*Deltas are computed from unrounded scores* (e.g. overall token-F1 22.1 → 22.0 is −0.2, not the rounded −0.1).
+
 **What survived, what didn't.**
 - **The overall answer-F1 win is gone:** +8.8 → **−0.2** (flat). Essentially *all* of the apparent
   overall F1 gain in v1 was an artifact of the answer-only overlay.
