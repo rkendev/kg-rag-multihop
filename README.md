@@ -1,5 +1,7 @@
 # kg-rag-multihop
 
+[![CI](https://github.com/rkendev/kg-rag-multihop/actions/workflows/ci.yml/badge.svg)](https://github.com/rkendev/kg-rag-multihop/actions/workflows/ci.yml)
+
 **A study of whether knowledge graphs help AI answer multi-step questions, and an honest finding that overturned its own positive result.**
 
 ▶ **Try it (no setup, opens in your browser):** [Live results explorer](https://rkendev.github.io/kg-rag-multihop/) — browse 100 real test questions and see, side by side, where the approach helped and where it did not.
@@ -36,6 +38,8 @@ Answer quality (higher is better), measured three ways:
 |---|---:|---:|---:|
 | Overall answer score | 22.1 | **30.9** (big jump) | **22.0** (no real change) |
 | Found the right evidence | 74.2 | 89.0 | 82.5 (still better) |
+
+*Deltas are computed from unrounded scores.*
 
 The graph **keeps finding better evidence** even on the realistic test. The catch is that the small AI model does not convert that better evidence into better answers. On the realistic test, the graph changed the final answer for only **15 of 100 questions** (it improved 7, hurt 8, left 85 unchanged).
 
@@ -108,4 +112,4 @@ just verify-kgrag     # deterministic recompute + fairness check
 
 ## License
 
-Code: see repository. Dataset ([2WikiMultiHopQA](https://github.com/Alab-NII/2wikimultihop)) is Apache-2.0; its license is retained under `data/`. The derived corpus and question sets are committed under the dataset's permissive terms; the raw dataset is not.
+Code: MIT (see [LICENSE](LICENSE)). Dataset ([2WikiMultiHopQA](https://github.com/Alab-NII/2wikimultihop)) is Apache-2.0; its license is retained under `data/`. The derived corpus and question sets are committed under the dataset's permissive terms; the raw dataset is not.
