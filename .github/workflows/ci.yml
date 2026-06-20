@@ -1,0 +1,36 @@
+name: CI
+
+# Runs only the deterministic, no-model checks that pass from a clean checkout of
+# committed files — no Ollama models, no GPU, and no gitignored graph/run binaries
+# (the Kùzu/FAISS indexes and runs/ are not in VCS). These recompute the P1
+# extraction gate and matcher validation purely from stored predictions + frozen gold.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up uv (pins Python from .python-version)
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.11"
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --frozen
+
+      - name: Matcher validation (P1 gate)
+        run: uv run --frozen python -m kgrag.eval.validate_matcher
+
+      - name: Extraction reproducibility (P1 gate)
+        run: uv run --frozen python -m kgrag.eval.verify_extraction
+
+      - name: Post-fix extraction re-verify (Step-0 gate)
+        run: uv run --frozen python -m kgrag.eval.extraction_eval_postfix
