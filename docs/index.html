@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KG-RAG vs Flat RAG — multi-hop results explorer</title>
+<style>
+  :root{
+    --bg:#fbfbfa; --panel:#fff; --ink:#1a1a1a; --muted:#6b6b6b; --line:#e4e4e1;
+    --accent:#2d4a7c; --good:#1f7a3d; --good-bg:#e7f4ea; --bad:#a33; --bad-bg:#fbeaea;
+    --graph:#9a5b00; --graph-bg:#fdf1dd; --tie:#777; --chip:#f0f0ee;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  header{border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .hbar{display:flex;align-items:baseline;gap:14px;padding:14px 0;flex-wrap:wrap}
+  h1{font-size:18px;margin:0;font-weight:650}
+  .sub{color:var(--muted);font-size:13px}
+  nav{margin-left:auto;display:flex;gap:6px}
+  nav button{font:inherit;font-size:14px;border:1px solid var(--line);background:var(--panel);
+    color:var(--ink);padding:6px 14px;border-radius:7px;cursor:pointer}
+  nav button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  main{padding:26px 0 60px}
+  section.view{display:none} section.view.on{display:block}
+  h2{font-size:16px;margin:30px 0 10px} h2:first-child{margin-top:0}
+  p.lead{font-size:15px;color:#333;max-width:760px}
+  .verdict{border-left:3px solid var(--accent);background:#f4f6fa;padding:12px 16px;
+    border-radius:0 8px 8px 0;margin:18px 0;font-size:15px}
+  .bigstat{font-size:17px;font-weight:600;margin:14px 0;line-height:1.5}
+  .bigstat .g{color:var(--good)} .bigstat .b{color:var(--bad)} .bigstat .t{color:var(--tie)}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0 4px}
+  th,td{border-bottom:1px solid var(--line);padding:7px 10px;text-align:right}
+  th:first-child,td:first-child{text-align:left}
+  thead th{font-weight:600;color:var(--muted);border-bottom:2px solid var(--line)}
+  td.win{color:var(--good);font-weight:600} td.loss{color:var(--bad);font-weight:600}
+  td.flat0{color:var(--muted)}
+  .delta{font-size:12px;color:var(--muted)}
+  caption{caption-side:bottom;text-align:left;color:var(--muted);font-size:12px;padding-top:6px}
+  .trust{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+  .trust div{background:var(--chip);border:1px solid var(--line);border-radius:8px;
+    padding:9px 13px;font-size:13px;flex:1 1 220px}
+  .trust b{display:block;color:var(--accent);font-size:12px;text-transform:uppercase;
+    letter-spacing:.03em;margin-bottom:2px}
+  .note{color:var(--muted);font-size:13px;max-width:760px}
+
+  /* explorer */
+  .filters{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:6px 0 16px;
+    position:sticky;top:55px;background:var(--bg);padding:10px 0;z-index:4;border-bottom:1px solid var(--line)}
+  .filters select,.filters button{font:inherit;font-size:13px;border:1px solid var(--line);
+    background:var(--panel);color:var(--ink);padding:6px 11px;border-radius:7px;cursor:pointer}
+  .filters button.preset.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .filters .helped.on{background:var(--good);border-color:var(--good)}
+  .filters .hurt.on{background:var(--bad);border-color:var(--bad)}
+  .count{color:var(--muted);font-size:13px;margin-left:auto}
+  .explore{display:grid;grid-template-columns:minmax(300px,420px) 1fr;gap:18px;align-items:start}
+  @media(max-width:820px){.explore{grid-template-columns:1fr}}
+  .qlist{display:flex;flex-direction:column;gap:6px;max-height:78vh;overflow:auto;padding-right:4px}
+  .qcard{border:1px solid var(--line);background:var(--panel);border-radius:9px;padding:10px 12px;
+    cursor:pointer;text-align:left}
+  .qcard:hover{border-color:#bcbcbc}
+  .qcard.sel{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+  .qcard .qq{font-size:14px;line-height:1.4}
+  .qmeta{display:flex;gap:6px;align-items:center;margin-top:7px;flex-wrap:wrap}
+  .badge{font-size:11px;padding:2px 8px;border-radius:20px;border:1px solid transparent;white-space:nowrap}
+  .b-hop{background:var(--chip);color:#444}
+  .b-better{background:var(--good-bg);color:var(--good)}
+  .b-worse{background:var(--bad-bg);color:var(--bad)}
+  .b-tie{background:#eee;color:var(--tie)}
+  .panel{border:1px solid var(--line);background:var(--panel);border-radius:11px;padding:18px;
+    position:sticky;top:120px}
+  .panel.empty{color:var(--muted);text-align:center;padding:60px 18px}
+  .q-head .q{font-size:16px;font-weight:600;line-height:1.4}
+  .q-head .gold{margin-top:8px;font-size:14px}
+  .q-head .gold b{color:var(--good)}
+  .q-badges{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+  .cap{margin:14px 0;padding:10px 13px;background:#f4f6fa;border-radius:8px;font-size:13.5px;color:#333}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:6px}
+  @media(max-width:560px){.cols{grid-template-columns:1fr}}
+  .col h3{font-size:13px;margin:0 0 8px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+  .ans{border:1px solid var(--line);border-radius:8px;padding:10px;font-size:14px;min-height:46px}
+  .ans .label{font-size:11px;color:var(--muted);display:block;margin-bottom:3px}
+  .verdict-badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;margin-top:8px}
+  .v-ok{background:var(--good-bg);color:var(--good)} .v-no{background:var(--bad-bg);color:var(--bad)}
+  .v-abs{background:#eee;color:var(--tie)}
+  .chunks{margin-top:12px}
+  .chunks .ch-h{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:6px}
+  .chunk{border:1px solid var(--line);border-left:4px solid var(--line);border-radius:6px;
+    padding:7px 9px;margin-bottom:6px;font-size:12.5px;background:#fff}
+  .chunk.gold{border-left-color:var(--good);background:var(--good-bg)}
+  .chunk.surfaced{border-left-color:var(--graph);background:var(--graph-bg)}
+  .chunk .ct{color:var(--muted);font-size:11px;display:flex;gap:6px;flex-wrap:wrap;margin-bottom:3px;align-items:center}
+  .chunk .cid{font-family:ui-monospace,Menlo,Consolas,monospace}
+  .tag{font-size:10px;padding:1px 6px;border-radius:10px}
+  .tag.gold{background:var(--good);color:#fff}
+  .tag.surfaced{background:var(--graph);color:#fff}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:8px 0 0}
+  .legend span{display:inline-flex;align-items:center;gap:5px}
+  .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+  .sw.gold{background:var(--good)} .sw.surfaced{background:var(--graph)}
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:12px;padding:18px 0;margin-top:30px}
+  code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12.5px;background:var(--chip);padding:1px 5px;border-radius:4px}
+</style>
+</head>
+<body>
+<header><div class="wrap hbar">
+  <h1>KG-RAG vs Flat RAG</h1>
+  <span class="sub">multi-hop QA · 2WikiMultiHopQA · 100 held-out questions · pre-computed, no live model</span>
+  <nav>
+    <button id="nav-result" class="on" onclick="showView('result')">Result</button>
+    <button id="nav-explore" onclick="showView('explore')">Explore</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+
+<!-- ===================== VIEW A: RESULT ===================== -->
+<section id="view-result" class="view on">
+  <h2>Does a knowledge graph help multi-hop RAG? The honest answer.</h2>
+  <p class="lead">
+    The first version of this experiment showed a large multi-hop win (+8.8 token-F1) for adding a
+    knowledge-graph retrieval leg. But that graph was <em>answer-enriched</em> — built only from the
+    paragraphs that support the gold answers. Rebuilt over the <em>realistic</em> context pool
+    (the same gold paragraphs <em>plus</em> their distractors, 851 chunks), the win largely collapses.
+  </p>
+
+  <div class="bigstat" id="bigstat">&nbsp;</div>
+
+  <div class="verdict">
+    <b>Verdict:</b> the headline +8.8 F1 win does <strong>not</strong> survive a realistic graph.
+    Retrieval recall still improves (recall@5 +8.2), but the extra chunks no longer convert into
+    better answers — and the largest multi-hop slice actually regresses.
+  </div>
+
+  <h2>Three-way comparison — overall</h2>
+  <table>
+    <thead><tr>
+      <th>metric</th><th>Flat RAG (P0)</th><th>v1 answer-enriched</th><th>v2 realistic (+distractors)</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>token-F1</td><td class="flat0">22.1</td>
+        <td class="win">30.9 <span class="delta">+8.8</span></td>
+        <td class="loss">22.0 <span class="delta">−0.2</span></td></tr>
+      <tr><td>exact match</td><td class="flat0">21.0</td>
+        <td class="win">28.0 <span class="delta">+7.0</span></td>
+        <td class="loss">20.0 <span class="delta">−1.0</span></td></tr>
+      <tr><td>support recall@5</td><td class="flat0">74.2</td>
+        <td class="win">89.0 <span class="delta">+14.7</span></td>
+        <td class="win">82.5 <span class="delta">+8.2</span></td></tr>
+      <tr><td>comparison F1 <span class="delta">(single-hop guardrail)</span></td><td class="flat0">61.9</td>
+        <td>61.9 <span class="delta">+0.0</span></td>
+        <td class="loss">57.1 <span class="delta">−4.8</span></td></tr>
+    </tbody>
+    <caption>Recall@5 (retrieval) still improves on the realistic graph; token-F1 / EM (answer quality) fall back to flat.</caption>
+  </table>
+
+  <h2>Per multi-hop slice — token-F1</h2>
+  <table>
+    <thead><tr>
+      <th>slice</th><th>n</th><th>Flat</th><th>v1</th><th>v2 realistic</th><th>recall@5 Δ v2</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>bridge</td><td>14</td><td class="flat0">7.2</td>
+        <td class="win">19.4 <span class="delta">+12.2</span></td>
+        <td class="win">12.3 <span class="delta">+5.1</span></td>
+        <td class="win">+14.3</td></tr>
+      <tr><td>compositional</td><td>42</td><td class="flat0">7.5</td>
+        <td class="win">12.4 <span class="delta">+4.9</span></td>
+        <td class="loss">2.4 <span class="delta">−5.1</span></td>
+        <td class="win">+10.7</td></tr>
+      <tr><td>bridge_comparison</td><td>23</td><td class="flat0">21.7</td>
+        <td class="win">43.4 <span class="delta">+21.7</span></td>
+        <td class="win">31.5 <span class="delta">+9.8</span></td>
+        <td class="win">+12.0</td></tr>
+    </tbody>
+    <caption>Every multi-hop F1 delta shrank from v1 to v2; <code>compositional</code> (the largest slice) flipped negative even as its recall@5 rose.</caption>
+  </table>
+
+  <h2>A second finding — entity resolution</h2>
+  <p class="lead">
+    The v1 entity-resolution merge precision of <b>0.930</b> was itself an artifact of the
+    answer-enriched corpus. Under the <em>same string-only rules</em>, the realistic
+    distractor-inclusive graph (full of same-name royals, families and dynasties that the dataset
+    uses as distractors) collapsed to <b>0.821</b>. Four surgical, precision-first bug-fixes restored
+    it to <b>0.903</b> — without losing connectivity (bridge-entity coverage held at 0.907).
+  </p>
+
+  <h2>Why the numbers are trustworthy</h2>
+  <div class="trust">
+    <div><b>Only retrieval changed</b>Generator, prompt, judge, metrics and frozen gold are byte-identical to the baseline — <code>git diff</code> over those files is empty.</div>
+    <div><b>Deterministic</b>One generation pass at temperature 0; every EM / F1 / recall@k recomputes exactly from the stored runs.</div>
+    <div><b>Honestly scoped</b>Realistic graph includes distractors (no answer enrichment). Still test-question-scoped, not the full corpus — stated as future work.</div>
+  </div>
+  <p class="note" style="margin-top:14px">
+    Numbers transcribed from <code>THESIS_RESULT_v2.md</code>. Open the <b>Explore</b> tab to browse all
+    100 questions and see, per case, exactly where the graph helped and where it hurt.
+  </p>
+</section>
+
+<!-- ===================== VIEW B: EXPLORE ===================== -->
+<section id="view-explore" class="view">
+  <h2>Explore all 100 questions</h2>
+  <p class="note">Pick a question to see Flat RAG and KG-RAG side by side: the model answers, and the
+    retrieved chunks with <span style="color:var(--good)">gold-support</span> and
+    <span style="color:var(--graph)">graph-surfaced (flat-missed)</span> chunks highlighted.</p>
+
+  <div class="filters">
+    <select id="f-hop" onchange="render()">
+      <option value="">all hop types</option>
+    </select>
+    <button class="preset helped" id="p-helped" onclick="preset('kg_better')">▲ where the graph helped</button>
+    <button class="preset hurt" id="p-hurt" onclick="preset('kg_worse')">▼ where it hurt</button>
+    <button class="preset" id="p-tie" onclick="preset('tie')">tie</button>
+    <button class="preset" id="p-all" onclick="preset('')">all outcomes</button>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="explore">
+    <div class="qlist" id="qlist"></div>
+    <div id="detail"><div class="panel empty">Select a question on the left.</div></div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  Pre-computed static demo · no backend, no models at view time, no network calls.
+  Source &amp; methodology: <code>rkendev/kg-rag-multihop</code>.
+</div></footer>
+
+<script src="data.js"></script>
+<script>
+"use strict";
+var DATA = window.DEMO_DATA || {records:[],chunks:{},meta:{}};
+var REC = DATA.records, CH = DATA.chunks;
+var GOLD = {}, SURF = {}; // per-record fast lookup sets, keyed by id
+
+REC.forEach(function(r){
+  GOLD[r.id] = new Set(r.gold_support_chunk_ids);
+  SURF[r.id] = new Set(r.kg.graph_surfaced_chunk_ids);
+});
+
+var state = {hop:"", outcome:""};
+
+function showView(v){
+  document.getElementById("view-result").classList.toggle("on", v==="result");
+  document.getElementById("view-explore").classList.toggle("on", v==="explore");
+  document.getElementById("nav-result").classList.toggle("on", v==="result");
+  document.getElementById("nav-explore").classList.toggle("on", v==="explore");
+}
+
+function fillBigStat(){
+  var c = (DATA.meta && DATA.meta.outcome_counts) || {kg_better:0,kg_worse:0,tie:0};
+  document.getElementById("bigstat").innerHTML =
+    "On the realistic graph, KG-RAG <span class='g'>improved "+c.kg_better+
+    " of 100 answers</span>, <span class='b'>hurt "+c.kg_worse+
+    "</span>, and <span class='t'>left "+c.tie+" unchanged</span>.";
+}
+
+function initFilters(){
+  var hops = Array.from(new Set(REC.map(function(r){return r.hop_type;}))).sort();
+  var sel = document.getElementById("f-hop");
+  hops.forEach(function(h){
+    var o=document.createElement("option"); o.value=h; o.textContent=h+" ("+
+      REC.filter(function(r){return r.hop_type===h;}).length+")"; sel.appendChild(o);
+  });
+}
+
+function preset(o){
+  state.outcome = (state.outcome===o)?"":o;
+  document.getElementById("p-helped").classList.toggle("on", state.outcome==="kg_better");
+  document.getElementById("p-hurt").classList.toggle("on", state.outcome==="kg_worse");
+  document.getElementById("p-tie").classList.toggle("on", state.outcome==="tie");
+  document.getElementById("p-all").classList.toggle("on", state.outcome==="");
+  render();
+}
+
+function outcomeBadge(o){
+  if(o==="kg_better") return '<span class="badge b-better">graph helped</span>';
+  if(o==="kg_worse")  return '<span class="badge b-worse">graph hurt</span>';
+  return '<span class="badge b-tie">tie</span>';
+}
+
+function render(){
+  state.hop = document.getElementById("f-hop").value;
+  var list = REC.filter(function(r){
+    return (!state.hop || r.hop_type===state.hop) &&
+           (!state.outcome || r.outcome===state.outcome);
+  });
+  document.getElementById("count").textContent = list.length+" of "+REC.length+" questions";
+  var el = document.getElementById("qlist");
+  el.innerHTML = "";
+  list.forEach(function(r){
+    var d=document.createElement("button");
+    d.className="qcard"; d.dataset.id=r.id;
+    d.onclick=function(){ selectQ(r.id); };
+    d.innerHTML='<div class="qq">'+esc(r.question)+'</div>'+
+      '<div class="qmeta"><span class="badge b-hop">'+r.hop_type+' · '+r.hop_count+'-hop</span>'+
+      outcomeBadge(r.outcome)+'</div>';
+    el.appendChild(d);
+  });
+  if(state.selected && list.some(function(r){return r.id===state.selected;})) selectQ(state.selected);
+}
+
+function answerBlock(side, rec){
+  var a = rec.abstained ? "<em>(abstained — no answer)</em>" : (rec.answer ? esc(rec.answer) : "<em>(empty)</em>");
+  var vb = rec.abstained ? '<span class="verdict-badge v-abs">abstained</span>'
+        : rec.correct ? '<span class="verdict-badge v-ok">✓ correct</span>'
+        : '<span class="verdict-badge v-no">✗ incorrect</span>';
+  return '<div class="col"><h3>'+side+'</h3><div class="ans"><span class="label">model answer</span>'+
+    a+'</div>'+vb+'</div>';
+}
+
+function chunkList(ids, qid){
+  if(!ids.length) return '<div class="note">— no chunks —</div>';
+  return ids.map(function(cid){
+    var c = CH[cid] || {source_title:"(unknown)",text:""};
+    var cls="chunk", tags="";
+    if(GOLD[qid].has(cid)){ cls+=" gold"; tags+='<span class="tag gold">gold-support</span>'; }
+    if(SURF[qid].has(cid)){ cls+=" surfaced"; tags+='<span class="tag surfaced">graph-surfaced</span>'; }
+    return '<div class="'+cls+'"><div class="ct"><span class="cid">'+cid+'</span>'+
+      '<span>'+esc(c.source_title)+'</span>'+tags+'</div>'+esc(c.text)+'</div>';
+  }).join("");
+}
+
+function selectQ(id){
+  state.selected = id;
+  var r = REC.find(function(x){return x.id===id;});
+  Array.prototype.forEach.call(document.querySelectorAll(".qcard"), function(c){
+    c.classList.toggle("sel", c.dataset.id===id);
+  });
+  var h =
+    '<div class="panel"><div class="q-head"><div class="q">'+esc(r.question)+'</div>'+
+    '<div class="gold">Gold answer: <b>'+esc(r.gold_answer)+'</b></div>'+
+    '<div class="q-badges"><span class="badge b-hop">'+r.hop_type+' · '+r.hop_count+'-hop</span>'+
+    outcomeBadge(r.outcome)+'</div></div>'+
+    '<div class="cap">'+esc(r.caption)+'</div>'+
+    '<div class="cols">'+answerBlock("Flat RAG", r.flat)+answerBlock("KG-RAG", r.kg)+'</div>'+
+    '<div class="cols"><div class="col"><div class="chunks"><div class="ch-h">Flat retrieved (top-'+
+      r.flat.retrieved_chunk_ids.length+')</div>'+chunkList(r.flat.retrieved_chunk_ids,id)+'</div></div>'+
+    '<div class="col"><div class="chunks"><div class="ch-h">KG-RAG retrieved (top-'+
+      r.kg.retrieved_chunk_ids.length+')</div>'+chunkList(r.kg.retrieved_chunk_ids,id)+'</div></div></div>'+
+    '<div class="legend"><span><span class="sw gold"></span>gold-support chunk</span>'+
+    '<span><span class="sw surfaced"></span>graph surfaced this (flat missed it)</span></div>'+
+    '</div>';
+  document.getElementById("detail").innerHTML = h;
+}
+
+function esc(s){ return String(s==null?"":s)
+  .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+
+fillBigStat();
+initFilters();
+render();
+</script>
+</body>
+</html>
