@@ -82,6 +82,12 @@ eval-kgrag:
 verify-kgrag:
     uv run python -m kgrag.graph.verify_kgrag
 
+# --- P5: static results explorer (GitHub Pages) ---
+
+# Regenerate docs/data.js (window.DEMO_DATA) from the stored flat + v2 KG-RAG runs.
+demo-data:
+    uv run python scripts/export_demo_data.py
+
 # Remove regenerable artifacts (keeps frozen corpus + gold sets).
 clean-runs:
     rm -rf data/processed/runs data/processed/embeddings.npy data/processed/faiss.index data/processed/bm25.pkl
